@@ -11,8 +11,8 @@
 - Desenvolvimento de Sistemas Web
 
 #####A documentação relacionada a Desenvolvimento de Sistemas Web deve incluir: 
-#####Diagrama de Classes;
-#####Mockups das telas do eCommerce (à mão ou em sistemas como invisionapp.com).
+- Diagrama de Classes;
+- Mockups das telas do eCommerce (à mão ou em sistemas como invisionapp.com).
 
 ####O sistema criado deve possuir as seguintes características:
 - Desenvolver a aplicação web utilizando o **Play! Framework 2.4 com Java**;
