@@ -15,10 +15,15 @@ public class Produto extends Model{
 	
 	@Required
 	public String nome;
+	
 	@Required
-	public String categoria;
+	public Categoria categoria;
+	
+	@Required
+	public double preco;
 	
 	public String descricao; 
+	
 	public byte[] foto;
 	
 	public static Finder<Long, Produto> find = new Finder<Long,Produto>(Produto.class);

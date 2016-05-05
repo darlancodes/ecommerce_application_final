@@ -16,13 +16,16 @@ public class Usuario extends Model{
 	public Long id;
 	
 	@Required
-	public String usuario;
+	public String email;
 	@Required
 	public String password;
 	@Required
 	public Boolean tipoUsuario;
 	
+	
+	
 	public static Finder<Long, Usuario> find = new Finder<Long,Usuario>(Usuario.class);
+	
 	
 }
 
