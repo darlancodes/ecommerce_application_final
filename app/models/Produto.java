@@ -11,20 +11,26 @@ public class Produto extends Model{
 
 	@Id
 	@GeneratedValue
-	public Long codigoBarras;
+	private Long id;
 	
 	@Required
-	public String nome;
+	private String nome;
 	
 	@Required
-	public Categoria categoria;
+	@ManyToOne
+	private Categoria categoria;
 	
 	@Required
-	public double preco;
+	private double preco;
 	
-	public String descricao; 
+	@Required
+	private String descricao; 
 	
-	public byte[] foto;
+	@Required
+	private byte[] foto;
+	
+	@ManyToOne
+	private ItemProduto itemproduto;
 	
 	public static Finder<Long, Produto> find = new Finder<Long,Produto>(Produto.class);
 	

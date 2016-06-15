@@ -13,7 +13,7 @@ create table item_estoque (
 create table produto (
   codigo_barras             bigint auto_increment not null,
   nome                      varchar(255),
-  categoria                 varchar(255),
+  preco                     double,
   descricao                 varchar(255),
   foto                      varbinary(255),
   constraint pk_produto primary key (codigo_barras))
@@ -21,7 +21,7 @@ create table produto (
 
 create table usuario (
   id                        bigint auto_increment not null,
-  usuario                   varchar(255),
+  email                     varchar(255),
   password                  varchar(255),
   tipo_usuario              tinyint(1) default 0,
   constraint pk_usuario primary key (id))
