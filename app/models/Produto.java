@@ -32,6 +32,9 @@ public class Produto extends Model{
 	@ManyToOne
 	private ItemProduto itemproduto;
 	
+	@Required
+	private Boolean disponivel;
+	
 	public static Finder<Long, Produto> find = new Finder<Long,Produto>(Produto.class);
 	
 }

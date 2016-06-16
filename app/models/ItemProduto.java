@@ -21,10 +21,8 @@ public class ItemProduto {
 
 	@Required
 	@OneToMany(mappedBy="itemproduto")
-	private Produto produto;
-	
-	@OneToMany(mappedBy="itemproduto")
-	private List<Estoque> estoque = new ArrayList<>();
+	private List<Produto> produto = new ArrayList<>();
+
 	
 	@ManyToMany
 	private List<Carrinho> carrinho = new ArrayList<>();

@@ -1,6 +1,8 @@
 package models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import com.avaje.ebean.Model;
 import com.avaje.ebean.Model.Finder;
 import play.data.validation.Constraints.*;
@@ -25,10 +27,10 @@ public class Endereco {
 	private String CEP;
 	
 	@OneToMany(mappedBy="endereco")
-	private Cliente cliente;
+	private List<Cliente> cliente = new ArrayList<>();
 	
 	@OneToMany(mappedBy="endereco")
-	private Administrador administrador;
+	private List<Administrador> administrador = new ArrayList<>();
 	
 	
 	
