@@ -1,5 +1,8 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 import com.avaje.ebean.Model;
 import com.avaje.ebean.Model.Finder;
@@ -20,9 +23,16 @@ public class ItemProduto {
 	@OneToMany(mappedBy="itemproduto")
 	private Produto produto;
 	
-	@ManyToOne
-	private Estoque estoque;
+	@OneToMany(mappedBy="itemproduto")
+	private List<Estoque> estoque = new ArrayList<>();
+	
+	@ManyToMany
+	private List<Carrinho> carrinho = new ArrayList<>();
 	
 	
 	public static Finder<Long, ItemProduto> find = new Finder<Long,ItemProduto>(ItemProduto.class);
 }
+
+
+
+

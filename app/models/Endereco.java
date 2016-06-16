@@ -24,10 +24,10 @@ public class Endereco {
 	@Required
 	private String CEP;
 	
-	@ManyToOne
+	@OneToMany(mappedBy="endereco")
 	private Cliente cliente;
 	
-	@ManyToOne
+	@OneToMany(mappedBy="endereco")
 	private Administrador administrador;
 	
 	

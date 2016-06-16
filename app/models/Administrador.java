@@ -25,7 +25,7 @@ public class Administrador {
 	private String email;
 	
 	@Required
-	@OneToMany(mappedBy="adiministrador")
+	@ManyToOne
 	private Endereco endereco;
 	
 }

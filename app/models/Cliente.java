@@ -23,7 +23,7 @@ public class Cliente extends Model{
 	private String email;
 	
 	@Required
-	@OneToMany(mappedBy="cliente")
+	@ManyToOne
 	private Endereco endereco;
 	
 	@OneToOne

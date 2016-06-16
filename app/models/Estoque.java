@@ -17,8 +17,8 @@ public class Estoque {
 	@Required
 	private Long quantidade;
 	
-	@OneToMany(mappedBy="estoque")
-	private List<ItemProduto> itemProduto = new ArrayList<>();
+	@ManyToOne
+	private ItemProduto itemproduto;
 	
 	public static Finder<Long, Estoque> find = new Finder<Long,Estoque>(Estoque.class);
 
