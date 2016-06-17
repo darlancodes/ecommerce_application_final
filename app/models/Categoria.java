@@ -23,4 +23,29 @@ public class Categoria extends Model {
 	
 	public static Finder<Long, Categoria> find = new Finder<Long,Categoria>(Categoria.class);
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNone() {
+		return none;
+	}
+
+	public void setNone(String none) {
+		this.none = none;
+	}
+
+	public List<Produto> getProdutos() {
+		return Produtos;
+	}
+
+	public void setProdutos(List<Produto> produtos) {
+		Produtos = produtos;
+	}
+
+	
 }

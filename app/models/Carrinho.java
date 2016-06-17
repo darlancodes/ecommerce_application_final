@@ -26,4 +26,46 @@ public class Carrinho extends Model{
 	
 	public static Finder<Long, Carrinho> find = new Finder<Long,Carrinho>(Carrinho.class);
 
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public List<ItemProduto> getItemproduto() {
+		return itemproduto;
+	}
+
+
+	public void setItemproduto(List<ItemProduto> itemproduto) {
+		this.itemproduto = itemproduto;
+	}
+
+
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	
+	
+
 }
