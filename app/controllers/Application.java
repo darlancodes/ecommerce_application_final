@@ -13,7 +13,7 @@ import views.html.*;
 public class Application extends Controller {
 
     public Result index() {
-        return ok(views.html.index.render());
+        return ok(views.html.index.render("Darlan"));
     }
     
 }

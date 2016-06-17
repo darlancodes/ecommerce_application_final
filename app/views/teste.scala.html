@@ -1,0 +1,26 @@
+@(formCliente: Form[Cliente], formEndereco: Form[Endereco], formCategoria: Form[Categoria], formProduto: Form[Produto])
+@import helper._
+@main("Form Cadastro") {
+
+    <h1>Formulário para cadastro</h1>
+    @helper.form(action = routes.Cadastro.cadastrar()){
+    	
+    	<h6>Cliente</h6>
+    	@helper.inputText(formCliente("nome"), '_label -> "Nome")
+    	@helper.inputText(formCliente("email"), '_label -> "Email")
+    	@helper.inputText(formCliente("password"), '_label -> "Senha")
+    	
+    	<h6>Endereco</h6>
+    	@helper.inputText(formEndereco("rua"), '_label -> "Rua")
+    	@helper.inputText(formEndereco("cidade"), '_label -> "Cidade")
+    	@helper.inputText(formEndereco("estado"), '_label -> "Estado")
+    	@helper.inputText(formEndereco("cep"), '_label -> "CEP")
+    	
+    	<h6>Categoria</h6>
+		@helper.inputText(formCategoria("nome"), '_label -> "Nome")    	
+    	
+   		<h6>Produto</h6>
+   		
+    }
+
+}

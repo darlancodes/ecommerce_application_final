@@ -48,6 +48,7 @@ create table endereco (
 create table item_produto (
   id                        bigint auto_increment not null,
   quantidade                bigint,
+  produto_id                bigint,
   constraint pk_item_produto primary key (id))
 ;
 
@@ -58,7 +59,6 @@ create table produto (
   preco                     double,
   descricao                 varchar(255),
   foto                      varbinary(255),
-  itemproduto_id            bigint,
   disponivel                tinyint(1) default 0,
   constraint pk_produto primary key (id))
 ;
@@ -75,10 +75,10 @@ alter table cliente add constraint fk_cliente_endereco_2 foreign key (endereco_i
 create index ix_cliente_endereco_2 on cliente (endereco_id);
 alter table cliente add constraint fk_cliente_carrinho_3 foreign key (carrinho_id) references carrinho (id) on delete restrict on update restrict;
 create index ix_cliente_carrinho_3 on cliente (carrinho_id);
-alter table produto add constraint fk_produto_categoria_4 foreign key (categoria_id) references categoria (id) on delete restrict on update restrict;
-create index ix_produto_categoria_4 on produto (categoria_id);
-alter table produto add constraint fk_produto_itemproduto_5 foreign key (itemproduto_id) references item_produto (id) on delete restrict on update restrict;
-create index ix_produto_itemproduto_5 on produto (itemproduto_id);
+alter table item_produto add constraint fk_item_produto_produto_4 foreign key (produto_id) references produto (id) on delete restrict on update restrict;
+create index ix_item_produto_produto_4 on item_produto (produto_id);
+alter table produto add constraint fk_produto_categoria_5 foreign key (categoria_id) references categoria (id) on delete restrict on update restrict;
+create index ix_produto_categoria_5 on produto (categoria_id);
 
 
 

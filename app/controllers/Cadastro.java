@@ -14,10 +14,23 @@ public class Cadastro extends Controller{
 	
 	public Result novo()
 	{
-		return ok(views.html.index.render(formCliente,formEndereco,formCategoria,formProduto));
+		return ok(views.html.teste.render(formCliente,formEndereco,formCategoria,formProduto));
 	}
 	
-	
+	public Result cadastrar()
+	{
+		
+//		Form<Espaconave> formEnviado = formEspaconave.bindFromRequest();
+//
+//		if(formEnviado.hasErrors()){
+//		 flash("error", "Por favor corrija o formulário abaixo");
+//		}
+//
+//		Espaconave espaconave = formEnviado.get();
+//		espaconave.save();
+//		flash("error", "Planeta Não encontrado");
+		return ok(views.html.teste.render(formCliente,formEndereco,formCategoria,formProduto));
+	}
 	
 	
 }
