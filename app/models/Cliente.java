@@ -22,11 +22,11 @@ public class Cliente extends Model{
 	@Required
 	private String email;
 	
-	
 	@ManyToOne
 	private Endereco endereco;
 	
 	@OneToOne
+	@JoinColumn
 	private Carrinho carrinho;
 	
 	

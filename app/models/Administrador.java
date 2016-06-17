@@ -16,6 +16,9 @@ public class Administrador extends Model{
 	private String login;
 	
 	@Required
+	private String nome;
+
+	@Required
 	private String matricula;
 	
 	@Required
@@ -43,6 +46,14 @@ public class Administrador extends Model{
 
 	public void setLogin(String login) {
 		this.login = login;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getMatricula() {

@@ -1,30 +1,48 @@
-@(formCliente: Form[Cliente], formEndereco: Form[Endereco], formCategoria: Form[Categoria], formProduto: Form[Produto])
+@(formCliente: Form[Cliente], formEndereco: Form[Endereco], formProduto: Form[Produto], categorias: List[Categoria] )
 @import helper._
 @main("Form Cadastro") {
 
     <h1>Formulário para cadastro</h1>
     @helper.form(action = routes.Cadastro.cadastrar()){
     	
-    	<h6>Cliente</h6>
+    	<h2>Cliente</h2>
     	@helper.inputText(formCliente("nome"), '_label -> "Nome")
     	@helper.inputText(formCliente("email"), '_label -> "Email")
     	@helper.inputPassword(formCliente("password"), '_label -> "Senha")
     	
-    	<h6>Endereco</h6>
+    	<h2>Endereco</h2>
     	@helper.inputText(formEndereco("rua"), '_label -> "Rua")
     	@helper.inputText(formEndereco("cidade"), '_label -> "Cidade")
     	@helper.inputText(formEndereco("estado"), '_label -> "Estado")
-    	@helper.inputText(formEndereco("cep"), '_label -> "CEP")
+    	@helper.inputText(formEndereco("CEP"), '_label -> "CEP")
+    	   	
     	
-    	<h6>Categoria</h6>
-		@helper.inputText(formCategoria("nome"), '_label -> "Nome")    	
-    	
-   		<h6>Produto</h6>
+   		<h2>Produto</h2>
    		@helper.inputText(formProduto("nome"), '_label -> "Nome")  
    		@helper.inputText(formProduto("preco"), '_label -> "Preço")  
    		@textarea(formProduto("descricao"), '_label -> "Descricao")  
+   		
+   		<label>Categorias </label>
+
+		<select class="browser-default" name="categoria.id">
+
+		<option disabled selected>Selecione</option>>
+		@for(categoria <- categorias){
+
+		<option value="@(categoria.id)" @{if (formProduto("categoria.id") == categoria.id) "selected" else ""}>
+
+			@(categoria.nome)
+			
+		</option>
+
+		} 
+
+		</select>
+   		
+   		
    		@helper.inputFile(formProduto("foto"), '_label -> "Foto")
    		<input type="checkbox" name="disponivel" value="true" checked/>
+   		
    		
    		<input type="submit" class="btn btn-primary" value="Cadastrar">	
    		

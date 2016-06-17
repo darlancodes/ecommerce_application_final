@@ -23,7 +23,6 @@ public class ItemProduto extends Model {
 	@ManyToOne
 	private Produto produto;
 
-	
 	@ManyToMany
 	private List<Carrinho> carrinho = new ArrayList<>();
 	

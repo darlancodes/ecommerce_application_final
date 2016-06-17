@@ -6,6 +6,7 @@
 create table administrador (
   id                        bigint auto_increment not null,
   login                     varchar(255),
+  nome                      varchar(255),
   matricula                 varchar(255),
   password                  varchar(255),
   email                     varchar(255),
@@ -21,7 +22,7 @@ create table carrinho (
 
 create table categoria (
   id                        bigint auto_increment not null,
-  none                      varchar(255),
+  nome                      varchar(255),
   constraint pk_categoria primary key (id))
 ;
 

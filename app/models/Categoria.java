@@ -13,13 +13,13 @@ public class Categoria extends Model {
 	
 	@Id
 	@GeneratedValue
-	private Long id;
+	public Long id;
 	
 	@Required
-	private String none;
+	public String nome;
 	
 	@OneToMany(mappedBy="categoria")
-	private List<Produto> Produtos = new ArrayList<>();
+	public List<Produto> Produtos = new ArrayList<>();
 	
 	public static Finder<Long, Categoria> find = new Finder<Long,Categoria>(Categoria.class);
 
@@ -31,12 +31,12 @@ public class Categoria extends Model {
 		this.id = id;
 	}
 
-	public String getNone() {
-		return none;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setNone(String none) {
-		this.none = none;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public List<Produto> getProdutos() {
