@@ -30,7 +30,8 @@ public class Produto extends Model{
 	private byte[] foto;
 	
 	@ManyToOne
-	private ItemProduto itemproduto;
+	@OneToMany(mappedBy="produto")
+	private List<ItemProduto> itemproduto = new ArrayList<>();
 	
 	@Required
 	private Boolean disponivel;
@@ -85,11 +86,11 @@ public class Produto extends Model{
 		this.foto = foto;
 	}
 
-	public ItemProduto getItemproduto() {
+	public List<ItemProduto> getItemproduto() {
 		return itemproduto;
 	}
 
-	public void setItemproduto(ItemProduto itemproduto) {
+	public void setItemproduto(List<ItemProduto> itemproduto) {
 		this.itemproduto = itemproduto;
 	}
 

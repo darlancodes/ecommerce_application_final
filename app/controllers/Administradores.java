@@ -3,5 +3,7 @@ package controllers;
 import play.mvc.Controller;
 
 public class Administradores extends Controller{
+	
+	
 
 }

@@ -20,8 +20,8 @@ public class ItemProduto extends Model {
 	private Long quantidade;
 
 	@Required
-	@OneToMany(mappedBy="itemproduto")
-	private List<Produto> produto = new ArrayList<>();
+	@ManyToOne
+	private Produto produto;
 
 	
 	@ManyToMany
@@ -51,12 +51,12 @@ public class ItemProduto extends Model {
 	}
 
 
-	public List<Produto> getProduto() {
+	public Produto getProduto() {
 		return produto;
 	}
 
 
-	public void setProduto(List<Produto> produto) {
+	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
 
