@@ -1,5 +1,9 @@
 package controllers;
 
-public class Produtos {
+import play.mvc.Controller;
+
+public class Produtos extends Controller{
+	
+	
 
 }

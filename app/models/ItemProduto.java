@@ -10,7 +10,7 @@ import com.avaje.ebean.Model.Finder;
 import play.data.validation.Constraints.Required;
 
 @Entity
-public class ItemProduto {
+public class ItemProduto extends Model {
 
 	@Id
 	@GeneratedValue

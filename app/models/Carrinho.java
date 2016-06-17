@@ -8,7 +8,7 @@ import com.avaje.ebean.Model.Finder;
 import play.data.validation.Constraints.Required;
 
 @Entity
-public class Carrinho {
+public class Carrinho extends Model{
 	
 	@Id
 	@GeneratedValue

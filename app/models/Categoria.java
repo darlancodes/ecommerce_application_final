@@ -9,7 +9,7 @@ import com.avaje.ebean.Model.Finder;
 import play.data.validation.Constraints.Required;
 
 @Entity
-public class Categoria {
+public class Categoria extends Model {
 	
 	@Id
 	@GeneratedValue

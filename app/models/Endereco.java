@@ -8,7 +8,7 @@ import com.avaje.ebean.Model.Finder;
 import play.data.validation.Constraints.*;
 
 @Entity
-public class Endereco {
+public class Endereco extends Model{
 
 	@Id
 	@GeneratedValue

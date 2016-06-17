@@ -1,5 +1,7 @@
 package controllers;
 
-public class Administradores {
+import play.mvc.Controller;
+
+public class Administradores extends Controller{
 
 }
