@@ -22,7 +22,7 @@ public class Cliente extends Model{
 	@Required
 	private String email;
 	
-	@Required
+	
 	@ManyToOne
 	private Endereco endereco;
 	

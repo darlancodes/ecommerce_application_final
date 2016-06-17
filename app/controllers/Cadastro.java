@@ -20,15 +20,19 @@ public class Cadastro extends Controller{
 	public Result cadastrar()
 	{
 		
-//		Form<Espaconave> formEnviado = formEspaconave.bindFromRequest();
-//
-//		if(formEnviado.hasErrors()){
-//		 flash("error", "Por favor corrija o formulário abaixo");
-//		}
-//
-//		Espaconave espaconave = formEnviado.get();
-//		espaconave.save();
-//		flash("error", "Planeta Não encontrado");
+		Form<Cliente> formClienteRecebido = formCliente.bindFromRequest();
+		Form<Categoria> formCategoriaRecebido = formCategoria.bindFromRequest();
+		Form<Endereco> formEnderecoRecebido = formEndereco.bindFromRequest();
+		Form<Produto> formProdutoRecebido = formProduto.bindFromRequest();
+		
+
+		if(formClienteRecebido.hasErrors()){
+		 flash("error", "Por favor corrija o formulário abaixo");
+		}
+
+		Cliente cliente = formClienteRecebido.get();
+		
+		
 		return ok(views.html.teste.render(formCliente,formEndereco,formCategoria,formProduto));
 	}
 	

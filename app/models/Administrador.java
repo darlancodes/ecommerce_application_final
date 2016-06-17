@@ -24,7 +24,6 @@ public class Administrador extends Model{
 	@Required
 	private String email;
 	
-	@Required
 	@ManyToOne
 	private Endereco endereco;
 	

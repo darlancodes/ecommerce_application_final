@@ -8,7 +8,7 @@
     	<h6>Cliente</h6>
     	@helper.inputText(formCliente("nome"), '_label -> "Nome")
     	@helper.inputText(formCliente("email"), '_label -> "Email")
-    	@helper.inputText(formCliente("password"), '_label -> "Senha")
+    	@helper.inputPassword(formCliente("password"), '_label -> "Senha")
     	
     	<h6>Endereco</h6>
     	@helper.inputText(formEndereco("rua"), '_label -> "Rua")
@@ -20,6 +20,13 @@
 		@helper.inputText(formCategoria("nome"), '_label -> "Nome")    	
     	
    		<h6>Produto</h6>
+   		@helper.inputText(formProduto("nome"), '_label -> "Nome")  
+   		@helper.inputText(formProduto("preco"), '_label -> "Preço")  
+   		@textarea(formProduto("descricao"), '_label -> "Descricao")  
+   		@helper.inputFile(formProduto("foto"), '_label -> "Foto")
+   		<input type="checkbox" name="disponivel" value="true" checked/>
+   		
+   		<input type="submit" class="btn btn-primary" value="Cadastrar">	
    		
     }
 
