@@ -59,7 +59,7 @@ create table produto (
   categoria_id              bigint,
   preco                     double,
   descricao                 varchar(255),
-  foto                      varbinary(255),
+  foto                      varchar(255),
   disponivel                tinyint(1) default 0,
   constraint pk_produto primary key (id))
 ;

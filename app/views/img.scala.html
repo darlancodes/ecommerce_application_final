@@ -1,0 +1,12 @@
+@(produtos: List[Produto])
+@main("img"){
+	
+	@for(produto <-produtos){
+	
+		<span>@produto.getNome()</span>
+		<span>@produto.getDescricao()</span>
+		<span>@produto.getPreco()</span>
+		<img src="@produto.getFoto()">
+	}
+
+}

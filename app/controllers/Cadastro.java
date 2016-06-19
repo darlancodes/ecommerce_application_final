@@ -1,7 +1,13 @@
 package controllers;
 
 import play.mvc.*;
+import play.mvc.Http.MultipartFormData;
+import play.mvc.Http.MultipartFormData.FilePart;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,11 +61,45 @@ public class Cadastro extends Controller{
 		cliente.setCarrinho(carrinho);
 		
 		cliente.save();
+		
+		if(uploadFoto()!="Erro"){
+			produto.setFoto(uploadFoto());
+		}
+		
 		produto.save();
 		
-		
-		return ok(views.html.teste.render(formCliente,formEndereco,formProduto,categorias));
+		List<Produto> produtos = Produto.find.all();
+		return ok(views.html.img.render(produtos));
 	}
 	
+	 public String uploadFoto(){
+		MultipartFormData body = request().body().asMultipartFormData();
+		FilePart picture = body.getFile("foto");
+		    	
+		if(picture != null) {
 	
+			String assetsDir = File.separator + "assets" + File.separator + "images" + File.separator;
+		    String fileName = picture.getFilename();
+		    String contentType = picture.getContentType();
+		    File file = picture.getFile();
+		    
+		    String appDir = System.getProperty("user.dir");	
+		    String newPath = appDir + File.separator + "public" + File.separator + "images" + File.separator + fileName;	
+		    File newFile = new File(newPath);
+		    		
+		    try {
+		        Files.move(file.toPath(), newFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+		        return assetsDir + fileName;
+		        
+		    } catch(IOException e) {
+		    	e.printStackTrace();
+		    }
+		    return assetsDir + fileName;
+		    } else {
+		    	flash("error", "Missing file");
+		    	return "Erro";
+		    }	
+	 }
+
+
 }

@@ -3,7 +3,8 @@
 @main("Form Cadastro") {
 
     <h1>Formulário para cadastro</h1>
-    @helper.form(action = routes.Cadastro.cadastrar()){
+
+    @helper.form(action = routes.Cadastro.cadastrar(), 'enctype -> "multipart/form-data"){
     	
     	<h2>Cliente</h2>
     	@helper.inputText(formCliente("nome"), '_label -> "Nome")
@@ -39,13 +40,12 @@
 
 		</select>
    		
-   		
-   		@helper.inputFile(formProduto("foto"), '_label -> "Foto")
+   		@helper.inputFile(formProduto("foto"), '_label -> "Foto") 		
    		<input type="checkbox" name="disponivel" value="true" checked/>
-   		
-   		
+   			
    		<input type="submit" class="btn btn-primary" value="Cadastrar">	
    		
     }
+
 
 }

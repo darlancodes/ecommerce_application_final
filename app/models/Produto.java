@@ -26,8 +26,9 @@ public class Produto extends Model{
 	@Required
 	private String descricao; 
 	
-	@Required
-	private byte[] foto;
+	
+	private String foto;
+	//private byte[] foto;
 	
 	@ManyToOne
 	@OneToMany(mappedBy="produto")
@@ -78,11 +79,11 @@ public class Produto extends Model{
 		this.descricao = descricao;
 	}
 
-	public byte[] getFoto() {
+	public String getFoto() {
 		return foto;
 	}
 
-	public void setFoto(byte[] foto) {
+	public void setFoto(String foto) {
 		this.foto = foto;
 	}
 
