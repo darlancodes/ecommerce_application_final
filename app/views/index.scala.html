@@ -1,6 +1,32 @@
-@(mensagem: String)
+@(produtos: List[Produto])
+@import meuhelper._
 @main("Inicio") {
 
-    <h2>It Works! @mensagem</h2>
+    <div class="banner">
+      <div class="wrapper clearfix">
+        meuhelper.link("#","Log in")
+        meuhelper.link("#","Cadastrar-se")
+        <h1>Pixel Perfect <br> Recursos &amp; Mockups</h1>
+      </div>
+    </div>
+    
+    <div class="nav">
+        <div class="wrapper">
+          <a onclick="myDropdown()" class="dropbtn">Categorias</a>
+          <div id="dropdown" class="dropdn-content">
+          for(produto <- produtos){
+            meuhelper.link("", "produto.getCategoria().getNome()")
+		  }
+          </div>
+          meuhelper.link("","produto.getCategoria().getNome()")
+          meuhelper.busca("Busca","search", "iPhone Template")
+        </div>
+     </div>
+     
+     <ul class="resources clearfix">
+     for(produto <- produtos){
+     	meuhelper.lista("","produto.getNome()","produto.getFoto()","produto.getPreco()")
+     }
+     </ul>
 
 }
