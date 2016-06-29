@@ -91,7 +91,7 @@ public class Produtos extends Controller{
 		produto.update();
 		
 		
-		return ok(views.html.cadastroadm.render(formProduto,categorias));
+		return ok(views.html.cadastroproduto.render(formProduto,categorias));
 	}
 	
 	public Result remover(Long id)
@@ -101,7 +101,7 @@ public class Produtos extends Controller{
 		produto.setDisponivel(false);	
 		
 		produto.update();
-		return ok(views.html.cadastroadm.render(formProduto,categorias));
+		return ok(views.html.cadastroproduto.render(formProduto,categorias));
 		
 	}
 

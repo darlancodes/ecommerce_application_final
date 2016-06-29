@@ -32,11 +32,11 @@ GET		/adm/produtos/editar                controllers.Produtos.editar(id:Long)
 GET     /adm/produtos/atualizar             controllers.Produtos.atualizar()
 GET     /adm/produtos/remover               controllers.Produtos.remover(id:Long)
 #AdmCategorias
-#GET     /adm/categorias/novo  				controllers.Categorias.novo()
-#POST    /adm/categorias/cadastrar           controllers.Categorias.cadastrar()
-#GET     /adm/categorias/editar              controllers.Categorias.editar(id:Long)
-#GET     /adm/categorias/atualizar           controllers.Categorias.atualizar()
-#GET     /adm/categorias/remover             controllers.Categorias.remover(id:Long)
+GET     /adm/categorias/novo  				controllers.Categorias.novo()
+POST    /adm/categorias/cadastrar           controllers.Categorias.cadastrar()
+GET     /adm/categorias/editar              controllers.Categorias.editar(id:Long)
+GET     /adm/categorias/atualizar           controllers.Categorias.atualizar()
+GET     /adm/categorias/remover             controllers.Categorias.remover(id:Long)
 
 
 

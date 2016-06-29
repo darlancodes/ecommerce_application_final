@@ -1,0 +1,31 @@
+@(formCategoria: Form[Categoria])
+@import meuhelper._
+@main("Inicio") {
+
+	<div class="banner">
+      <div class="wrapper clearfix">
+        @link("#","Bem Vindo Fulano!") 
+        
+        <h1>Pixel Perfect <br> Loja Intranet</h1>
+      </div>
+    </div>
+    
+    <div class="nav">
+        <div class="wrapper">
+        @titulo("Cadastro de Categorias","title","true")
+        </div>
+     </div>
+     
+     <div class="wrapper_cadastro">
+     	
+     	@meuhelper.form("cadastro",routes.Administradores.novo(), "POST"){
+     
+     		@label("Dados da Categoria")
+     		@inputText(formCategoria("nome").value, "Nome Categoria", "nome", "required")
+
+    		@separator("")
+     		<input class="button" type="submit" value="Cadastrar">
+     	}
+     	
+     </div>
+}
