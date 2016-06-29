@@ -18,19 +18,20 @@
 
 	<div class="wrapper_cadastro">
 			
-		@meuhelper.form("cadastro",routes.Cadastro.novo(), "POST"){
+		@meuhelper.form("cadastro",routes.Administradores.cadastrar(), "POST"){
 			
 			@label("Dados Pessoais")
-			@inputText("text", formAdm("nome").value, "Nome Completo", "nome")
-			@inputText("email", formAdm("email").value, "E-mail", "email")
-			@inputText("text", formAdm("matricula").value, "Matrícula", "matricula")
-			@inputText("password", formAdm("senha").value, "Senha", "senha")
-			@inputText("password", formAdm("senha").value, "Confirmar Senha", "senha")
+			@inputText(formAdm("nome").value, "Nome Completo", "nome")
+			@inputText(formAdm("email").value, "E-mail", "email")
+			@inputText(formAdm("matricula").value, "Matrícula", "matricula")
+			@inputText(formAdm("login").value, "Login", "login")
+			@inputPassword(formAdm("password").value, "Senha", "password"," ")
+			@inputPassword(formAdm("password").value, "Confirmar Senha", "password", "validaSenha(this)")
 			@label("Endereço")
-			@inputText("text", formEndereco("Rua").value,"Rua","rua")
-			@inputText("text", formEndereco("Cidade").value,"Cidade","rua")
-			@inputText("text", formEndereco("Estado").value,"Estado","estado")
-			@inputText("text", formEndereco("CEP").value,"CEP","cep")
+			@inputText(formEndereco("Rua").value,"Rua","rua")
+			@inputText(formEndereco("Cidade").value,"Cidade","cidade")
+			@inputText(formEndereco("Estado").value,"Estado","estado")
+			@inputText(formEndereco("CEP").value,"CEP","CEP")
 			
 			<p></p>
 			<input class="button" type="submit" value="Cadastrar">

@@ -4,7 +4,7 @@
 
     <h1>Formulário para cadastro</h1>
 
-    @helper.form(action = routes.Cadastro.cadastrar(), 'enctype -> "multipart/form-data"){
+    @helper.form(action = routes.Administradores.novo(), 'enctype -> "multipart/form-data"){
     	
     	<h2>Cliente</h2>
     	@helper.inputText(formCliente("nome"), '_label -> "Nome")

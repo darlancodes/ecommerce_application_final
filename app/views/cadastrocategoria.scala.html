@@ -18,13 +18,12 @@
      
      <div class="wrapper_cadastro">
      	
-     	@meuhelper.form("cadastro",routes.Cadastro.novo(), "POST"){
+     	@meuhelper.form("cadastro",routes.Administradores.novo(), "POST"){
      
      		@label("Dados da Categoria")
-     		@inputText("text", formCategoria("nome").value, "Nome Categoria", "nome")
+     		@inputText(formCategoria("nome").value, "Nome Categoria", "nome")
 
-     		@meuhelper.separator
-    
+    		@separator("")
      		<input class="button" type="submit" value="Cadastrar">
      	}
      	
