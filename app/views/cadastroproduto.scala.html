@@ -21,8 +21,8 @@
      	@meuhelper.form("cadastro",routes.Administradores.novo(), "POST"){
      	
      		@label("Dados do Produto")
-     		@inputText("text", formProduto("nome").value, "Nome", "nome")
-     		@inputText("text", formProduto("preco").value, "Preço", "preco")
+     		@inputText(formProduto("nome").value, "Nome", "nome")
+     		@inputText(formProduto("preco").value, "Preço", "preco")
      		@textarea("descricao",formProduto("descricao").value,"descrição" )
      		@label("Foto para o Produto")
      		@inputFile("foto", formProduto("foto").value)

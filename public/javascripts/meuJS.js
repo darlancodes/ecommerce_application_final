@@ -16,8 +16,8 @@ function reloadPlanetas(){
 	});
 }
 
-function validaSenha (input){ 
-    if (input.value != document.getElementById('txtSenha').value) {
+function validaSenha(){ 
+    if (document.getElementById('password') != document.getElementById('password2').value) {
     input.setCustomValidity('Repita a senha corretamente');
   } else {
     input.setCustomValidity('');
