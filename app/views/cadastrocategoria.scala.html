@@ -21,7 +21,7 @@
      	@meuhelper.form("cadastro",routes.Administradores.novo(), "POST"){
      
      		@label("Dados da Categoria")
-     		@inputText(formCategoria("nome").value, "Nome Categoria", "nome")
+     		@inputText(formCategoria("nome").value, "Nome Categoria", "nome", "required")
 
     		@separator("")
      		<input class="button" type="submit" value="Cadastrar">

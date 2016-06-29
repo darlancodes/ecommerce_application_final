@@ -18,16 +18,16 @@
      
      <div class="wrapper_cadastro">
      	
-     	@meuhelper.form("cadastro",routes.Administradores.novo(), "POST"){
+     	@meuhelper.form("cadastro",routes.Produtos.cadastrar(), "POST"){
      	
      		@label("Dados do Produto")
-     		@inputText(formProduto("nome").value, "Nome", "nome")
-     		@inputText(formProduto("preco").value, "Preço", "preco")
+     		@inputText(formProduto("nome").value, "Nome", "nome", "required")
+     		@inputText(formProduto("preco").value, "Preço", "preco", "required")
      		@textarea("descricao",formProduto("descricao").value,"descrição" )
      		@label("Foto para o Produto")
      		@inputFile("foto", formProduto("foto").value)
      		@label("Disponível? - (marque se sim)")
-     		@inputCheckbox("disponivel", formProduto("disponivel").value, "checked")
+     		@inputCheckbox("disponivel", "checked", "true")
      		
      		<p></p>
      		<select class="browser-default" name="categoria.id">

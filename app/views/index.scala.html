@@ -16,7 +16,7 @@
           <a onclick="myDropdown()" class="dropbtn">Categorias</a>
           <div id="dropdown" class="dropdn-content">
           @for(produto <- produtos){
-            @link("#", "produto.getCategoria().getNome()")
+            @link("#", produto.getCategoria().getNome())
 		  }
           </div>
           @busca("Busca","search", "iPhone Template")
@@ -25,7 +25,7 @@
      
      <ul class="resources clearfix">
      @for(produto <- produtos){
-     	@lista("","produto.getNome()","produto.getFoto()",produto.getPreco())
+     	@lista("",produto.getNome(),produto.getFoto(),produto.getPreco())
      }
      </ul>
 

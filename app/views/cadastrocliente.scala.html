@@ -21,15 +21,15 @@
 		@meuhelper.form("cadastro",routes.Administradores.novo(), "POST"){
 			
 			@label("Dados Pessoais")
-			@inputText(formCliente("nome").value, "Nome Completo", "nome")
-			@inputText(formCliente("email").value, "E-mail", "email")
+			@inputText(formCliente("nome").value, "Nome Completo", "nome", "required")
+			@inputText(formCliente("email").value, "E-mail", "email", "required")
 			@inputPassword(formCliente("senha").value, "Senha", "senha", " ")
-			@inputPassword(formCliente("senha").value, "Confirmar Senha", "senha", "validaSenha(this)")
+			@inputPassword(formCliente("senha").value, "Confirmar Senha", "senha", "checkPass(); return false;")
 			@label("Endereço")
-			@inputText(formEndereco("Rua").value,"Rua","rua")
-			@inputText(formEndereco("Cidade").value,"Cidade","rua")
-			@inputText(formEndereco("Estado").value,"Estado","estado")
-			@inputText(formEndereco("CEP").value,"CEP","cep")
+			@inputText(formEndereco("Rua").value,"Rua","rua", "required")
+			@inputText(formEndereco("Cidade").value,"Cidade","rua", "required")
+			@inputText(formEndereco("Estado").value,"Estado","estado", "required")
+			@inputText(formEndereco("CEP").value,"CEP","cep", "required")
 			
 			<p></p>
 			<input class="button" type="submit" value="Cadastrar">
