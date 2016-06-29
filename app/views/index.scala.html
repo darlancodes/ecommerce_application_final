@@ -25,7 +25,9 @@
      
      <ul class="resources clearfix">
      @for(produto <- produtos){
-     	@lista("",produto.getNome(),produto.getFoto(),produto.getPreco())
+     	@if(produto.getDisponivel()==true){
+     		@lista("",produto.getNome(),produto.getFoto(),produto.getPreco())
+     	}
      }
      </ul>
 

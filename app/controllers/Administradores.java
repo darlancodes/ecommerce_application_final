@@ -44,7 +44,7 @@ public class Administradores extends Controller{
 		Form<Administrador> formAdmFill = formAdm.fill(adm);
 		Form<Endereco> formEnderecoFill = formEndereco.fill(endereco);
 		
-		return ok(views.html.editarcadastroadm.render(formAdmFill,formEnderecoFill));
+		return ok(views.html.editaradm.render(formAdmFill,formEnderecoFill));
 	}
 	
 	public Result atualizar(){

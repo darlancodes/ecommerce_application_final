@@ -22,22 +22,20 @@ GET     /adm/editar							controllers.Administradores.editar(id:Long)
 GET     /adm/atualizar                      controllers.Administradores.atualizar()
 GET     /adm/remover						controllers.Administradores.remover(id:Long)
 #AdmClientes
-#GET     /adm/clientes				    	controllers.Clientes.novo()
-#POST    /adm/clientes/cadastrar       		controllers.Clientes.cadastrar()
-#GET     /adm/clientes/editar				controllers.Clientes.editar(id:Long)
+
 #GET     /adm/clientes/atualizar				controllers.Clientes.atualizar(id:Long)
 #GET     /adm/clientes/remover				controllers.Administradores.removerCliente(id:Long)
 #AdmProdutos
 GET     /adm/produtos/novo					controllers.Produtos.novo()
 POST    /adm/produtos/cadastrar             controllers.Produtos.cadastrar()
-#GET		/adm/produtos/editar                controllers.Produtos.editar(id:Long)
-#GET     /adm/produtos/atualizar             controllers.Produtos.atualizar(id:Long)
-#GET     /adm/produtos/remover               controllers.Produtos.remover(id:Long)
+GET		/adm/produtos/editar                controllers.Produtos.editar(id:Long)
+GET     /adm/produtos/atualizar             controllers.Produtos.atualizar()
+GET     /adm/produtos/remover               controllers.Produtos.remover(id:Long)
 #AdmCategorias
 #GET     /adm/categorias/novo  				controllers.Categorias.novo()
 #POST    /adm/categorias/cadastrar           controllers.Categorias.cadastrar()
 #GET     /adm/categorias/editar              controllers.Categorias.editar(id:Long)
-#GET     /adm/categorias/atualizar           controllers.Categorias.atualizar(id:Long)
+#GET     /adm/categorias/atualizar           controllers.Categorias.atualizar()
 #GET     /adm/categorias/remover             controllers.Categorias.remover(id:Long)
 
 

@@ -68,5 +68,41 @@ public class Produtos extends Controller{
 		    	return "Erro";
 		    }	
 	 }
+	
+	public Result editar(Long id){
+		
+		Produto produto = Produto.find.byId(id);		
+		List<Categoria> categorias = Categoria.find.all();
+		
+		Form<Produto> formProdutoFill = formProduto.fill(produto);
+		
+		return ok(views.html.editarproduto.render(formProdutoFill,categorias));
+	}
+	
+	public Result atualizar(){
+		
+		Form<Produto> formProdutoRecebido = formProduto.bindFromRequest();
+		
+		if(formProdutoRecebido.hasErrors()){
+			 flash("error", "Por favor corrija o formulário abaixo");
+		}
+		
+		Produto produto = formProdutoRecebido.get();
+		produto.update();
+		
+		
+		return ok(views.html.cadastroadm.render(formProduto,categorias));
+	}
+	
+	public Result remover(Long id)
+	{
+		
+		Produto produto = Produto.find.byId(id);
+		produto.setDisponivel(false);	
+		
+		produto.update();
+		return ok(views.html.cadastroadm.render(formProduto,categorias));
+		
+	}
 
 }
