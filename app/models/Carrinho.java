@@ -15,7 +15,7 @@ public class Carrinho extends Model{
 	private Long id;
 	
 	@ManyToMany(mappedBy="carrinho")
-	private List<ItemProduto> itemproduto = new ArrayList<>();
+	private List<Produto> produto = new ArrayList<>();
 	
 	@Required
 	private int quantidade;
@@ -37,13 +37,13 @@ public class Carrinho extends Model{
 	}
 
 
-	public List<ItemProduto> getItemproduto() {
-		return itemproduto;
+	public List<Produto> getItemproduto() {
+		return produto;
 	}
 
 
-	public void setItemproduto(List<ItemProduto> itemproduto) {
-		this.itemproduto = itemproduto;
+	public void setItemproduto(List<Produto> itemproduto) {
+		this.produto = itemproduto;
 	}
 
 

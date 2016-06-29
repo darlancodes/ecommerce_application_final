@@ -4,8 +4,9 @@
 
     <div class="banner">
       <div class="wrapper clearfix">
-        meuhelper.link("#","Log in")
-        meuhelper.link("#","Cadastrar-se")
+        @link("#","Log in") 
+        <a>&nbsp;</a>
+        @link("#","Cadastrar-se") 
         <h1>Pixel Perfect <br> Recursos &amp; Mockups</h1>
       </div>
     </div>
@@ -14,18 +15,17 @@
         <div class="wrapper">
           <a onclick="myDropdown()" class="dropbtn">Categorias</a>
           <div id="dropdown" class="dropdn-content">
-          for(produto <- produtos){
-            meuhelper.link("", "produto.getCategoria().getNome()")
+          @for(produto <- produtos){
+            @link("#", "produto.getCategoria().getNome()")
 		  }
           </div>
-          meuhelper.link("","produto.getCategoria().getNome()")
-          meuhelper.busca("Busca","search", "iPhone Template")
+          @busca("Busca","search", "iPhone Template")
         </div>
      </div>
      
      <ul class="resources clearfix">
-     for(produto <- produtos){
-     	meuhelper.lista("","produto.getNome()","produto.getFoto()","produto.getPreco()")
+     @for(produto <- produtos){
+     	@lista("","produto.getNome()","produto.getFoto()",produto.getPreco())
      }
      </ul>
 

@@ -28,7 +28,7 @@ public class Cadastro extends Controller{
 	
 	public Result novo()
 	{
-		return ok(views.html.teste.render(formCliente,formEndereco,formProduto,categorias));
+		return ok(views.html.cadastoproduto.render(formCliente));
 	}
 	
 	public Result cadastrar()
@@ -69,7 +69,7 @@ public class Cadastro extends Controller{
 		produto.save();
 		
 		List<Produto> produtos = Produto.find.all();
-		return ok(views.html.img.render(produtos));
+		return ok(views.html.index.render(produtos));
 	}
 	
 	 public String uploadFoto(){

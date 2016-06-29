@@ -1,0 +1,47 @@
+@(formProduto: Form[Produto], categorias: List[Categoria])
+@import meuhelper._
+@main("Inicio") {
+
+	<div class="banner">
+      <div class="wrapper clearfix">
+        @link("#","Bem Vindo Fulano!") 
+        
+        <h1>Pixel Perfect <br> Loja Intranet</h1>
+      </div>
+    </div>
+    
+    <div class="nav">
+        <div class="wrapper">
+        @titulo("Cadastro de Produtos","title","true")
+        </div>
+     </div>
+     
+     <div class="wrapper_cadastro">
+     	
+     	@meuhelper.form("cadastro",routes.Cadastro.novo(), "POST"){
+     	
+     		@label("Dados do Produto")
+     		@inputText("text", formProduto("nome").value, "Nome", "nome")
+     		@inputText("text", formProduto("preco").value, "Preço", "preco")
+     		@textarea("descricao",formProduto("descricao").value,"descrição" )
+     		@label("Foto para o Produto")
+     		@inputFile("foto", formProduto("foto").value)
+     		@label("Disponível? - (marque se sim)")
+     		@inputCheckbox("disponivel", formProduto("disponivel").value, "checked")
+     		
+     		<p></p>
+     		<select class="browser-default" name="categoria.id">
+			<option disabled selected>Selecione Categoria</option>
+			@for(categoria <- categorias){
+			<option value="@(categoria.id)" @{if (formProduto("categoria.id") == categoria.id) "selected" else ""}>
+				@(categoria.nome)
+			</option>
+			} 
+			</select>
+     		<p></p>
+     		
+     		<input class="button" type="submit" value="Cadastrar">
+     	}
+     	
+     </div>
+}

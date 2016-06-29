@@ -1,0 +1,42 @@
+@(formAdm: Form[Administrador],formEndereco: Form[Endereco])
+@import meuhelper._
+@main("Inicio") {
+
+	<div class="banner">
+      <div class="wrapper clearfix">
+        @link("#","Bem Vindo Fulano!") 
+        
+        <h1>Pixel Perfect <br> Loja Intranet</h1>
+      </div>
+    </div>
+    
+    <div class="nav">
+        <div class="wrapper">
+        @titulo("Cadastro de Administradores","title","true")
+        </div>
+     </div>
+
+	<div class="wrapper_cadastro">
+			
+		@meuhelper.form("cadastro",routes.Cadastro.novo(), "POST"){
+			
+			@label("Dados Pessoais")
+			@inputText("text", formAdm("nome").value, "Nome Completo", "nome")
+			@inputText("email", formAdm("email").value, "E-mail", "email")
+			@inputText("text", formAdm("matricula").value, "Matrícula", "matricula")
+			@inputText("password", formAdm("senha").value, "Senha", "senha")
+			@inputText("password", formAdm("senha").value, "Confirmar Senha", "senha")
+			@label("Endereço")
+			@inputText("text", formEndereco("Rua").value,"Rua","rua")
+			@inputText("text", formEndereco("Cidade").value,"Cidade","rua")
+			@inputText("text", formEndereco("Estado").value,"Estado","estado")
+			@inputText("text", formEndereco("CEP").value,"CEP","cep")
+			
+			<p></p>
+			<input class="button" type="submit" value="Cadastrar">
+		
+		}
+	
+	</div>
+
+}

@@ -30,9 +30,8 @@ public class Produto extends Model{
 	private String foto;
 	//private byte[] foto;
 	
-	@ManyToOne
-	@OneToMany(mappedBy="produto")
-	private List<ItemProduto> itemproduto = new ArrayList<>();
+	@ManyToMany
+	private List<Carrinho> carrinho = new ArrayList<>();
 	
 	@Required
 	private Boolean disponivel;
@@ -87,12 +86,13 @@ public class Produto extends Model{
 		this.foto = foto;
 	}
 
-	public List<ItemProduto> getItemproduto() {
-		return itemproduto;
+
+	public List<Carrinho> getCarrinho() {
+		return carrinho;
 	}
 
-	public void setItemproduto(List<ItemProduto> itemproduto) {
-		this.itemproduto = itemproduto;
+	public void setCarrinho(List<Carrinho> carrinho) {
+		this.carrinho = carrinho;
 	}
 
 	public Boolean getDisponivel() {
