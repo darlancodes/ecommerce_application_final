@@ -86,4 +86,9 @@ public class Clientes extends Controller{
 		
 	}
 	
+	public Result login(){
+		
+		return ok(views.html.logincliente.render(formCliente));
+	}
+	
 }

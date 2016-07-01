@@ -93,6 +93,15 @@ td, th{
     font-size: 1em;
     font-weight: 400;
     padding: 1em 1em 1em 0em; }
+    .wrapper_cadastro a {
+      text-decoration: none;
+      font-size: 1em;
+      border: 2px solid #fff;
+      background: #4ad7b1;
+      padding: .2em;
+      border-radius: 0.5em;
+      color: #fff; }
+    
 
 textarea {
   font-style: italic; 

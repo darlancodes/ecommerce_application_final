@@ -1,0 +1,32 @@
+@(formCliente: Form[Cliente])
+@import meuhelper._
+@main("Login Cliente") {
+
+	<div class="banner">
+      <div class="wrapper clearfix" onclick="location.href='/';">
+        @link("#","Bem Vindo Fulano!") 
+        
+        <h1>Pixel Perfect <br> Área do Cliente</h1>
+      </div>
+    </div>
+    
+    <div class="nav">
+        <div class="wrapper">
+        @titulo("Login Cliente","title","true")
+        </div>
+     </div>
+     
+     <div class="wrapper_cadastro">
+     	@meuhelper.form("Login",routes.Clientes.login(), "POST"){
+     		
+     		@labe("Login:")
+     		@inputText(formCliente("login").value, "Login", "login", " ")
+     		@labe("Senha:")
+     		@inputText(formCliente("password").value, "Senha", "password", " ")
+     		<p></p>
+     		<input class="button" type="submit" value="Acessar">
+     	
+     	}
+     </div>
+     @separator("")
+}

@@ -1,0 +1,46 @@
+@import meuhelper._
+@main("Painel Adm") {
+
+	<div class="banner">
+      <div class="wrapper clearfix" onclick="location.href='/';">
+        @link("#","Bem Vindo Fulano!") 
+        
+        <h1>Pixel Perfect <br> Loja Intranet</h1>
+      </div>
+    </div>
+    
+    <div class="nav">
+        <div class="wrapper">
+        @titulo("Painel Administrativo","title","true")
+        </div>
+     </div>
+     
+     <div class="wrapper_cadastro">
+     	
+     	
+     		@label("Produtos")
+     		<p></p>
+     		@linkcall(routes.Produtos.novo(),"Cadastro de Produto")
+     		<p></p>
+     		@linkcall(routes.Produtos.listaProdutos(),"Visualizar Produtos")
+     		<p></p>
+     		@label("Categorias")
+     		<p></p>
+     		@linkcall(routes.Categorias.novo(),"Cadastro de Categorias")
+     		<p></p>
+     		@linkcall(routes.Categorias.listaCategorias(),"Visualizar Categorias")
+     		<p></p>
+     		@label("Clientes")
+     		<p></p>
+     		@linkcall(routes.Administradores.listaClientes(),"Visualizar Clientes")
+     		<p></p>
+     		@label("Administradores")
+     		<p></p>
+     		@linkcall(routes.Administradores.novo(),"Cadastrar Administrador")
+     		<p></p>
+     		@linkcall(routes.Administradores.listaAdms(),"Visualizar Administradores")
+     		@separator(" ")
+     
+     	
+     </div>
+}

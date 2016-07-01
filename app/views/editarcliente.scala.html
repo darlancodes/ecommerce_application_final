@@ -2,7 +2,7 @@
 @import meuhelper._
 @main("Inicio") {
 
-	<div class="banner">
+	<div class="banner" onclick="location.href='/';">
       <div class="wrapper clearfix">
         @link("#","Bem Vindo Fulano!") 
         
@@ -24,8 +24,8 @@
 			@inputText(formCliente("id").value, "Id", "id", "required")
 			@inputText(formCliente("nome").value, "Nome Completo", "nome", "required")
 			@inputText(formCliente("email").value, "E-mail", "email", "required")
-			@inputPassword(formCliente("senha").value, "Senha", "senha", " ", "password")
-			@inputPassword(formCliente("senha").value, "Confirmar Senha", "senha", "checkPass(); return false;", "password2")
+			@inputPassword(formCliente("password").value, "Senha", "senha"," ","password")
+			@inputPassword(formCliente("password").value, "Confirmar Senha", "senha", "checkPass(); return false;","password2")
 			@label("Endereço")
 			@inputText(formEndereco("Rua").value,"Rua","rua", "required")
 			@inputText(formEndereco("Cidade").value,"Cidade","cidade", "required")

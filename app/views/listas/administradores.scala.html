@@ -1,0 +1,62 @@
+@(adms: List[Administrador])
+@import meuhelper._
+@main("Adm's") {
+		
+	<div class="banner" onclick="location.href='/';">
+      <div class="wrapper clearfix">
+        @link("#","Log in") 
+        <a>&nbsp;</a>
+        @linkcall(routes.Clientes.novo(),"Cadastrar-se") 
+        <h1>Pixel Perfect <br> Loja Gerenciamento</h1>
+      </div>
+    </div>
+    		
+		
+	<div class= "wrapper">
+		<h2>Lista de Administradores Cadastrados</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nome</th>
+					<th>Email</th>
+					<th>Login</th>
+					<th>Rua</th>
+					<th>Cidade</th>
+					<th>CEP</th>
+					<th>Estado</th>
+					<th>Excluir</th>
+					<th>Editar</th>
+				</tr>
+			</thead>
+			<tbody>
+			@if(adms.isEmpty){
+		
+			<td><h4>Não ha Adm cadastrados.</h4></td>
+	
+			}else{
+				@for(adm <- adms) {
+					<tr>
+						<td>@adm.getId()</td>
+						<td>@adm.getNome()</td>
+						<td>@adm.getEmail()</td>
+						<td>@adm.getLogin()</td>
+						<td>@adm.getEndereco().getRua()</td>
+						<td>@adm.getEndereco().getCidade()</td>
+						<td>@adm.getEndereco().getCEP()</td>
+						<td>@adm.getEndereco().getEstado()</td>
+		
+						<td><a class="btn_lista" href="@routes.Administradores.remover(adm.getId())">Excluir Registro</a></td>
+						<td><a class="btn_lista" href="@routes.Administradores.editar(adm.getId())">Editar Registro</a></td>
+					</tr>
+				}
+			}
+			</tbody>
+		</table>
+		
+	<br>
+	
+</div>	
+
+
+}

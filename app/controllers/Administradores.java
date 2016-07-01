@@ -109,6 +109,23 @@ public class Administradores extends Controller{
 		return ok(views.html.listas.clientes.render(clientes));
 	}
 	
+	public Result listaAdms()
+	{
+		List<Administrador> adms = Administrador.find.all();
+		return ok(views.html.listas.administradores.render(adms));
+	}
+	
+	public Result painelAdm(){
+		
+		return ok(views.html.paineladm.render());
+	}
+	
+	public Result login(){
+		
+		return ok(views.html.loginadm.render(formAdm));
+	}
+	
+	
 	
 	
 	
