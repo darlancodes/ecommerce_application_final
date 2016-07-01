@@ -95,7 +95,7 @@ public class Produtos extends Controller{
 		produto.update();
 		
 		
-		return ok(views.html.cadastroproduto.render(formProduto,categorias));
+		return ok(views.html.paineladm.render());
 	}
 	
 	public Result remover(Long id)

@@ -2,6 +2,8 @@ package controllers;
 
 import java.util.List;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import models.*;
 import play.data.Form;
 import play.mvc.Controller;
@@ -30,12 +32,15 @@ public class Administradores extends Controller{
 		Administrador adm = formAdmRecebido.get();
 		Endereco endereco = formEnderecoRecebido.get();
 		
+		String hashSenha = BCrypt.hashpw(adm.getPassword(), BCrypt.gensalt());
+		adm.setPassword(hashSenha);
+		
 		endereco.save();
 		adm.setEndereco(endereco);
 		adm.save();
 		
 		
-		return ok(views.html.cadastroadm.render(formAdm,formEndereco));
+		return ok(views.html.paineladm.render());
 		
 	}
 	
@@ -67,7 +72,7 @@ public class Administradores extends Controller{
 		adm.update();
 		
 		
-		return ok(views.html.cadastroadm.render(formAdm,formEndereco));
+		return ok(views.html.paineladm.render());
 	}
 	
 	public Result remover(Long id)

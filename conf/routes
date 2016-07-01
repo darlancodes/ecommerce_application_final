@@ -48,6 +48,7 @@ GET     /adm/categorias/editar              controllers.Categorias.editar(id:Lon
 POST    /adm/categorias/atualizar           controllers.Categorias.atualizar()
 GET     /adm/categorias/remover             controllers.Categorias.remover(id:Long)
 GET     /adm/categorias/lista				controllers.Categorias.listaCategorias()
+GET     /categorias/busca					controllers.Categorias.buscaCategorias(id:Long)
 
 #Produto
 

@@ -1,5 +1,6 @@
 package controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import models.*;
@@ -50,7 +51,7 @@ public class Categorias extends Controller{
 		categoria.update();
 		
 		
-		return ok(views.html.cadastrocategoria.render(formCategoria));
+		return ok(views.html.paineladm.render());
 	}
 	
 	public Result remover(Long id)
@@ -68,6 +69,23 @@ public class Categorias extends Controller{
 		return ok(views.html.listas.categorias.render(categorias));
 	}
 	
+	public Result buscaCategorias(Long id){
+		
+		List<Categoria> categorias = Categoria.find.all();
+		List<Produto> produtos = Produto.find.all();
+		List<Produto> produtosEnviar = new ArrayList<>();
+		
+		for(Produto produto: produtos){
+			
+			if(produto.getCategoria().getId()==id){
+				produtosEnviar.add(produto);
+			}
+			
+		}
+		
+		return ok(views.html.index.render(produtosEnviar,categorias));
+		
+	}
 	
 	
 

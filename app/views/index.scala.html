@@ -4,7 +4,7 @@
 
     <div class="banner" onclick="location.href='/';">
       <div class="wrapper clearfix">
-        @link("#","Log in") 
+        @linkcall(routes.Clientes.login(),"Log in") 
         <a>&nbsp;</a>
         @linkcall(routes.Clientes.novo(),"Cadastrar-se") 
         <h1>Pixel Perfect <br> Recursos &amp; Mockups</h1>
@@ -16,7 +16,7 @@
           <a onclick="myDropdown()" class="dropbtn">Categorias</a>
           <div id="dropdown" class="dropdn-content">
           @for(categoria <- categorias){
-            @link("#", categoria.getNome())
+            @linkcall(routes.Categorias.buscaCategorias(categoria.getId()), categoria.getNome())
 		  }
           </div>
           @busca("Busca","search", "iPhone Template")

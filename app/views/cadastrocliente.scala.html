@@ -4,7 +4,6 @@
 
 	<div class="banner">
       <div class="wrapper clearfix" onclick="location.href='/';">
-        @link("#","Bem Vindo Fulano!") 
         
         <h1>Pixel Perfect <br> Recursos &amp; Mockups</h1>
       </div>
@@ -23,8 +22,8 @@
 			@label("Dados Pessoais")
 			@inputText(formCliente("nome").value, "Nome Completo", "nome", "required")
 			@inputText(formCliente("email").value, "E-mail", "email", "required")
-			@inputPassword(formCliente("senha").value, "Senha", "senha", " ", "password")
-			@inputPassword(formCliente("senha").value, "Confirmar Senha", "senha", "checkPass(); return false;", "password2")
+			@inputPassword(formCliente("senha").value, "Senha", "password", " ", "password"," ")
+			@inputPassword(formCliente("senha").value, "Confirmar Senha", "password", "checkPass(); return false;", "password2"," ")
 			@label("Endereço")
 			@inputText(formEndereco("Rua").value,"Rua","rua", "required")
 			@inputText(formEndereco("Cidade").value,"Cidade","cidade", "required")

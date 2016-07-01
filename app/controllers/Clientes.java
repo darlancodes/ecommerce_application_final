@@ -1,4 +1,6 @@
 package controllers;
+import org.mindrot.jbcrypt.BCrypt;
+
 import models.*;
 import play.data.Form;
 import play.mvc.Controller;
@@ -26,6 +28,9 @@ public class Clientes extends Controller{
 		Cliente cliente = formClienteRecebido.get();
 		Endereco endereco = formEnderecoRecebido.get();
 		Carrinho carrinho = new Carrinho();
+		
+		String hashSenha = BCrypt.hashpw(cliente.getPassword(), BCrypt.gensalt());
+		cliente.setPassword(hashSenha);
 		
 		endereco.save();
 		carrinho.save();
@@ -61,7 +66,7 @@ public class Clientes extends Controller{
 		Cliente cliente = formClienteRecebido.get();
 		Endereco endereco = formEnderecoRecebido.get();
 		
-		endereco.save();
+		endereco.update();
 		cliente.setEndereco(endereco);
 		cliente.update();
 		

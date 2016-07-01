@@ -16,7 +16,7 @@ function reloadPlanetas(){
 	});
 }
 
-document.getElementById("id").disabled = true;
+document.getElementById("id").readOnly = true;
 
 function checkPass()
 {
