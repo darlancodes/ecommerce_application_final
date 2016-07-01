@@ -1,0 +1,64 @@
+@(produtos: List[Produto])
+@import meuhelper._
+@main("Produtos") {
+		
+	<div class="banner">
+      <div class="wrapper clearfix">
+        @link("#","Log in") 
+        <a>&nbsp;</a>
+        @linkcall(routes.Clientes.novo(),"Cadastrar-se") 
+        <h1>Pixel Perfect <br> Loja Gerenciamento</h1>
+      </div>
+    </div>
+    		
+		
+	<div class= "wrapper">
+		<h2>Lista de Produtos Cadastrados</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nome</th>
+					<th>Preço</th>
+					<th>Descrição</th>
+					<th>Foto</th>
+					<th>Categoria</th>
+					<th>Disponível</th>
+					<th>Excluir</th>
+					<th>Editar</th>
+				</tr>
+			</thead>
+			<tbody>
+			@if(produtos.isEmpty){
+		
+			<td><h4>Não ha Produtos cadastrados.</h4></td>
+	
+			}else{
+				@for(produto <- produtos) {
+					<tr>
+						<td>@produto.getId()</td>
+						<td>@produto.getNome()</td>
+						<td>@produto.getPreco()</td>
+						<td>@produto.getDescricao()</td>
+						<td><img src="@produto.getFoto()" /></td>
+						<td>@produto.getCategoria().getNome()</td>
+						@if(produto.getDisponivel() == true){
+								<td>Sim</td>
+						}else{
+								<td>Não</td>
+						}
+		
+						<td><a class="btn_lista" href="@routes.Produtos.remover(produto.getId())">Excluir Registro</a></td>
+						<td><a class="btn_lista" href="@routes.Produtos.editar(produto.getId())">Editar Registro</a></td>
+					</tr>
+				}
+			}
+			</tbody>
+		</table>
+		
+	<br>
+	
+</div>	
+
+
+}

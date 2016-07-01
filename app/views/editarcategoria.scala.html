@@ -12,13 +12,13 @@
     
     <div class="nav">
         <div class="wrapper">
-        @titulo("Cadastro de Categorias","title","true")
+        @titulo("Editar Dados Categorias","title","true")
         </div>
      </div>
      
      <div class="wrapper_cadastro">
      	
-     	@meuhelper.form("cadastro",routes.Administradores.novo(), "POST"){
+     	@meuhelper.form("cadastro",routes.Categorias.atualizar(), "POST"){
      
      		@label("Dados da Categoria")
      		@inputText(formCategoria("nome").value, "Nome Categoria", "nome", "required")

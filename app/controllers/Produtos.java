@@ -57,12 +57,12 @@ public class Produtos extends Controller{
 		    		
 		    try {
 		        Files.move(file.toPath(), newFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-		        return assetsDir + fileName;
+		        return assetsDir+fileName;
 		        
 		    } catch(IOException e) {
 		    	e.printStackTrace();
 		    }
-		    return assetsDir + fileName;
+		    return assetsDir+fileName;
 		    } else {
 		    	flash("error", "Missing file");
 		    	return "Erro";
@@ -82,12 +82,15 @@ public class Produtos extends Controller{
 	public Result atualizar(){
 		
 		Form<Produto> formProdutoRecebido = formProduto.bindFromRequest();
+		Produto produto = formProdutoRecebido.get();
 		
 		if(formProdutoRecebido.hasErrors()){
 			 flash("error", "Por favor corrija o formulário abaixo");
 		}
 		
-		Produto produto = formProdutoRecebido.get();
+		if(uploadFoto()!="Erro"){
+			produto.setFoto(uploadFoto());
+		}
 		produto.update();
 		
 		
@@ -103,6 +106,12 @@ public class Produtos extends Controller{
 		produto.update();
 		return ok(views.html.cadastroproduto.render(formProduto,categorias));
 		
+	}
+	
+	public Result listaProdutos()
+	{
+		List<Produto> produtos = Produto.find.all();
+		return ok(views.html.listas.produtos.render(produtos));
 	}
 
 }

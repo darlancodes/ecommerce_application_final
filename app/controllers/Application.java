@@ -12,10 +12,11 @@ import views.html.*;
 
 public class Application extends Controller {
 
-	List<Produto> produtos = Produto.find.all();	
-	List<Categoria> categorias = Categoria.find.all();
+	
 	
     public Result index() {
+    	List<Produto> produtos = Produto.find.all();	
+    	List<Categoria> categorias = Categoria.find.all();
         return ok(views.html.index.render(produtos,categorias));
     }
     

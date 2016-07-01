@@ -11,7 +11,7 @@ GET     /                           		controllers.Application.index()
 GET     /clientes				    		controllers.Clientes.novo()
 POST    /clientes/cadastrar       			controllers.Clientes.cadastrar()
 GET     /clientes/editar					controllers.Clientes.editar(id:Long)
-GET     /clientes/atualizar					controllers.Clientes.atualizar()
+POST     /clientes/atualizar					controllers.Clientes.atualizar()
 GET     /clientes/remover                   controllers.Clientes.remover(id:Long)
 
 #GET     /clientes/visualizar_dados          controllers.Clientes.visualizarDados()
@@ -22,25 +22,26 @@ GET     /clientes/remover                   controllers.Clientes.remover(id:Long
 GET     /adm								controllers.Administradores.novo()
 POST    /adm/cadastrar						controllers.Administradores.cadastrar()
 GET     /adm/editar							controllers.Administradores.editar(id:Long)
-GET     /adm/atualizar                      controllers.Administradores.atualizar()
+POST     /adm/atualizar                      controllers.Administradores.atualizar()
 GET     /adm/remover						controllers.Administradores.remover(id:Long)
 #AdmClientes
 
 GET     /adm/clientes/lista				controllers.Administradores.listaClientes()
 #GET     /adm/clientes/editar				controllers.Clientes.editar(id:Long)
-#GET     /adm/clientes/atualizar				controllers.Clientes.atualizar()
+#POST     /adm/clientes/atualizar				controllers.Clientes.atualizar()
 GET     /adm/clientes/remover				controllers.Administradores.removerCliente(id:Long)
 #AdmProdutos
 GET     /adm/produtos/novo					controllers.Produtos.novo()
 POST    /adm/produtos/cadastrar             controllers.Produtos.cadastrar()
 GET		/adm/produtos/editar                controllers.Produtos.editar(id:Long)
-GET     /adm/produtos/atualizar             controllers.Produtos.atualizar()
+POST     /adm/produtos/atualizar             controllers.Produtos.atualizar()
 GET     /adm/produtos/remover               controllers.Produtos.remover(id:Long)
+GET     /adm/produtos/lista					controllers.Produtos.listaProdutos()
 #AdmCategorias
 GET     /adm/categorias/novo  				controllers.Categorias.novo()
 POST    /adm/categorias/cadastrar           controllers.Categorias.cadastrar()
 GET     /adm/categorias/editar              controllers.Categorias.editar(id:Long)
-GET     /adm/categorias/atualizar           controllers.Categorias.atualizar()
+POST     /adm/categorias/atualizar           controllers.Categorias.atualizar()
 GET     /adm/categorias/remover             controllers.Categorias.remover(id:Long)
 
 

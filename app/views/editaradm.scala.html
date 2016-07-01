@@ -12,13 +12,13 @@
     
     <div class="nav">
         <div class="wrapper">
-        @titulo("Cadastro de Administradores","title","true")
+        @titulo("Editar dados Administradores","title","true")
         </div>
      </div>
 
 	<div class="wrapper_cadastro">
 			
-		@meuhelper.form("cadastro",routes.Administradores.atualizar(), "GET"){
+		@meuhelper.form("cadastro",routes.Administradores.atualizar(), "POST"){
 			
 			@label("Dados Pessoais")
 			@inputText(formAdm("nome").value, "Nome Completo", "nome", "required")

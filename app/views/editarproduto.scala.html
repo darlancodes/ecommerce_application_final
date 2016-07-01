@@ -12,18 +12,19 @@
     
     <div class="nav">
         <div class="wrapper">
-        @titulo("Cadastro de Produtos","title","true")
+        @titulo("Editar Dados Produtos","title","true")
         </div>
      </div>
      
      <div class="wrapper_cadastro">
      	
-     	@meuhelper.form("cadastro",routes.Produtos.atualizar(), "GET"){
+     	@meuhelper.form("cadastro",routes.Produtos.atualizar(), "POST"){
      	
      		@label("Dados do Produto")
+     		@inputText(formProduto("id").value, "Id", "id", "required")
      		@inputText(formProduto("nome").value, "Nome", "nome", "required")
      		@inputText(formProduto("preco").value, "Preço", "preco", "required")
-     		@textarea("descricao",formProduto("descricao").value,"descrição" )
+     		@textarea("descricao",formProduto("descricao").value, " " )
      		@label("Foto para o Produto")
      		@inputFile("foto", formProduto("foto").value)
      		@label("Disponível? - (marque se sim)")
@@ -40,7 +41,7 @@
 			</select>
      		<p></p>
      		
-     		<input class="button" type="submit" value="Cadastrar">
+     		<input class="button" type="submit" value="Editar">
      	}
      	
      </div>
