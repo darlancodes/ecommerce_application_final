@@ -13,7 +13,7 @@ POST    /clientes/cadastrar       			controllers.Clientes.cadastrar()
 GET     /clientes/editar					controllers.Clientes.editar(id:Long)
 POST    /clientes/atualizar					controllers.Clientes.atualizar()
 GET     /clientes/remover                   controllers.Clientes.remover(id:Long)
-POST    /clientes/login						controllers.Clientes.login()
+GET     /clientes/login						controllers.Clientes.login()
 
 #GET     /clientes/visualizar_dados          controllers.Clientes.visualizarDados()
 #GET     /clientes/comprar                   controllers.Clientes.comprar(id:Long)
@@ -27,7 +27,7 @@ POST    /adm/atualizar                      controllers.Administradores.atualiza
 GET     /adm/remover						controllers.Administradores.remover(id:Long)
 GET     /adm/lista							controllers.Administradores.listaAdms()
 GET     /adm/painel							controllers.Administradores.painelAdm()
-POST    /adm/login							controllers.Administradores.login()
+GET     /adm/login							controllers.Administradores.login()
 
 #AdmClientes
 GET     /adm/clientes/lista					controllers.Administradores.listaClientes()
