@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.List;
+
 import models.*;
 import play.data.Form;
 import play.mvc.Controller;
@@ -9,6 +11,7 @@ public class Administradores extends Controller{
 	
 	private final Form<Administrador> formAdm = Form.form(Administrador.class);
 	private final Form<Endereco> formEndereco = Form.form(Endereco.class);
+	private final Form<Cliente> formCliente = Form.form(Cliente.class);
 	
 	public Result novo(){
 		
@@ -80,6 +83,30 @@ public class Administradores extends Controller{
 		
 		return ok(views.html.cadastroadm.render(formAdm,formEndereco));
 		
+	}
+	
+	public Result removerCliente(Long id)
+	{
+		
+		Cliente cliente = Cliente.find.byId(id);
+		Endereco endereco = cliente.getEndereco();
+		
+		cliente.delete();
+		
+		if(endereco.getId()==cliente.getEndereco().getId()){
+			endereco.delete();
+		}
+		
+		flash("Ok", "Usuário cliente excluido com sucesso");
+		
+		return ok(views.html.cadastrocliente.render(formCliente,formEndereco));
+		
+	}
+	
+	public Result listaClientes()
+	{
+		List<Cliente> clientes = Cliente.find.all();
+		return ok(views.html.listas.clientes.render(clientes));
 	}
 	
 	

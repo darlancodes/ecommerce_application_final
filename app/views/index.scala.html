@@ -1,4 +1,4 @@
-@(produtos: List[Produto])
+@(produtos: List[Produto], categorias: List[Categoria])
 @import meuhelper._
 @main("Inicio") {
 
@@ -6,7 +6,7 @@
       <div class="wrapper clearfix">
         @link("#","Log in") 
         <a>&nbsp;</a>
-        @link("#","Cadastrar-se") 
+        @linkcall(routes.Clientes.novo(),"Cadastrar-se") 
         <h1>Pixel Perfect <br> Recursos &amp; Mockups</h1>
       </div>
     </div>
@@ -15,8 +15,8 @@
         <div class="wrapper">
           <a onclick="myDropdown()" class="dropbtn">Categorias</a>
           <div id="dropdown" class="dropdn-content">
-          @for(produto <- produtos){
-            @link("#", produto.getCategoria().getNome())
+          @for(categoria <- categorias){
+            @link("#", categoria.getNome())
 		  }
           </div>
           @busca("Busca","search", "iPhone Template")

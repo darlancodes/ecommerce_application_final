@@ -1,0 +1,60 @@
+@(clientes: List[Cliente])
+@import meuhelper._
+@main("Clientes") {
+		
+	<div class="banner">
+      <div class="wrapper clearfix">
+        @link("#","Log in") 
+        <a>&nbsp;</a>
+        @linkcall(routes.Clientes.novo(),"Cadastrar-se") 
+        <h1>Pixel Perfect <br> Loja Gerenciamento</h1>
+      </div>
+    </div>
+    		
+		
+	<div class= "wrapper">
+		<h2>Lista de Clientes Cadastrados</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nome</th>
+					<th>Email</th>
+					<th>Rua</th>
+					<th>Cidade</th>
+					<th>CEP</th>
+					<th>Estado</th>
+					<th>Excluir</th>
+					<th>Editar</th>
+				</tr>
+			</thead>
+			<tbody>
+			@if(clientes.isEmpty){
+		
+			<td><h4>Não ha Clientes cadastrados.</h4></td>
+	
+			}else{
+				@for(cliente <- clientes) {
+					<tr>
+						<td>@cliente.getId()</td>
+						<td>@cliente.getNome()</td>
+						<td>@cliente.getEmail()</td>
+						<td>@cliente.getEndereco().getRua()</td>
+						<td>@cliente.getEndereco().getCidade()</td>
+						<td>@cliente.getEndereco().getCEP()</td>
+						<td>@cliente.getEndereco().getEstado()</td>
+		
+						<td><a class="btn_lista" href="@routes.Clientes.remover(cliente.getId())">Excluir Registro</a></td>
+						<td><a class="btn_lista" href="@routes.Clientes.editar(cliente.getId())">Editar Registro</a></td>
+					</tr>
+				}
+			}
+			</tbody>
+		</table>
+		
+	<br>
+	
+</div>	
+
+
+}

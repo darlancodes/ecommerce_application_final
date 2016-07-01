@@ -18,7 +18,7 @@
 
 	<div class="wrapper_cadastro">
 			
-		@meuhelper.form("cadastro",routes.Administradores.novo(), "POST"){
+		@meuhelper.form("cadastro",routes.Clientes.atualizar(), "POST"){
 			
 			@label("Dados Pessoais")
 			@inputText(formCliente("nome").value, "Nome Completo", "nome", "required")

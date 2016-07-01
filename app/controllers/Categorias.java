@@ -35,7 +35,7 @@ public class Categorias extends Controller{
 		
 		Form<Categoria> formCategoriaFill = formCategoria.fill(categoria);
 		
-		return ok(views.html.editarproduto.render(formCategoria));
+		return ok(views.html.editarcategoria.render(formCategoria));
 	}
 	
 	public Result atualizar(){

@@ -18,6 +18,31 @@ html, body {
   .wrapper .titulo {
     text-transform: none; }
 
+.wrapper h2{
+	color:white;
+}
+.wrapper td{
+	color:white;
+}
+.wrapper th{
+	color:white;
+}
+
+.btn_lista{
+	color:white;
+	text-decoration:none;
+}
+.btn_lista:hover{
+	color: #ff6666;
+	transition: 0.3s ease-in-out;
+}
+
+td, th{
+	border: 1px solid white;
+	padding: 15px;
+    text-align: left;
+}
+
 .descricao label, .descricao p {
   margin-bottom: 2em; }
 .descricao p {

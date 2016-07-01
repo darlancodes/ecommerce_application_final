@@ -25,9 +25,12 @@ public class Clientes extends Controller{
 		
 		Cliente cliente = formClienteRecebido.get();
 		Endereco endereco = formEnderecoRecebido.get();
+		Carrinho carrinho = new Carrinho();
 		
 		endereco.save();
+		carrinho.save();
 		cliente.setEndereco(endereco);
+		cliente.setCarrinho(carrinho);
 		cliente.save();
 		
 		
@@ -73,7 +76,9 @@ public class Clientes extends Controller{
 		Endereco endereco = cliente.getEndereco();
 		
 		cliente.delete();
-		endereco.delete();
+		if(endereco.getId()==cliente.getEndereco().getId()){
+			endereco.delete();
+		}
 		
 		flash("Ok", "Usuário cliente excluido com sucesso");
 		

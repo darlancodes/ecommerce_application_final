@@ -8,10 +8,13 @@ GET     /                           		controllers.Application.index()
 # App
 
 #Clientes
-#GET     /clientes				    		controllers.Clientes.novo()
-#POST    /clientes/cadastrar       			controllers.Clientes.cadastrar()
-#GET     /clientes/editar					controllers.Clientes.editar(id:Long)
-#GET     /clientes/atualizar					controllers.Clientes.atualizar(id:Long)
+GET     /clientes				    		controllers.Clientes.novo()
+POST    /clientes/cadastrar       			controllers.Clientes.cadastrar()
+GET     /clientes/editar					controllers.Clientes.editar(id:Long)
+GET     /clientes/atualizar					controllers.Clientes.atualizar()
+GET     /clientes/remover                   controllers.Clientes.remover(id:Long)
+
+#GET     /clientes/visualizar_dados          controllers.Clientes.visualizarDados()
 #GET     /clientes/comprar                   controllers.Clientes.comprar(id:Long)
 
 
@@ -23,8 +26,10 @@ GET     /adm/atualizar                      controllers.Administradores.atualiza
 GET     /adm/remover						controllers.Administradores.remover(id:Long)
 #AdmClientes
 
-#GET     /adm/clientes/atualizar				controllers.Clientes.atualizar(id:Long)
-#GET     /adm/clientes/remover				controllers.Administradores.removerCliente(id:Long)
+GET     /adm/clientes/lista				controllers.Administradores.listaClientes()
+#GET     /adm/clientes/editar				controllers.Clientes.editar(id:Long)
+#GET     /adm/clientes/atualizar				controllers.Clientes.atualizar()
+GET     /adm/clientes/remover				controllers.Administradores.removerCliente(id:Long)
 #AdmProdutos
 GET     /adm/produtos/novo					controllers.Produtos.novo()
 POST    /adm/produtos/cadastrar             controllers.Produtos.cadastrar()
