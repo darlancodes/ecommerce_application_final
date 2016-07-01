@@ -21,10 +21,11 @@
 		@meuhelper.form("cadastro",routes.Clientes.atualizar(), "POST"){
 			
 			@label("Dados Pessoais")
+			@inputText(formCliente("id").value, "Id", "id", "required")
 			@inputText(formCliente("nome").value, "Nome Completo", "nome", "required")
 			@inputText(formCliente("email").value, "E-mail", "email", "required")
-			@inputPassword(formCliente("senha").value, "Senha", "password", " ")
-			@inputPassword(formCliente("senha").value, "Confirmar Senha", "password2", "checkPass(); return false;")
+			@inputPassword(formCliente("senha").value, "Senha", "senha", " ", "password")
+			@inputPassword(formCliente("senha").value, "Confirmar Senha", "senha", "checkPass(); return false;", "password2")
 			@label("Endereço")
 			@inputText(formEndereco("Rua").value,"Rua","rua", "required")
 			@inputText(formEndereco("Cidade").value,"Cidade","cidade", "required")
@@ -32,7 +33,7 @@
 			@inputText(formEndereco("CEP").value,"CEP","CEP", "required")
 			
 			<p></p>
-			<input class="button" type="submit" value="Cadastrar">
+			<input class="button" type="submit" value="Editar">
 		
 		}
 	

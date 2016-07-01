@@ -1,0 +1,54 @@
+@(produto: Produto, produtos: List[Produto], categorias: List[Categoria])
+@import meuhelper._
+@main("Inicio") {
+
+    <div class="banner">
+      <div class="wrapper clearfix">
+        @link("#","Log in") 
+        <a>&nbsp;</a>
+        @linkcall(routes.Clientes.novo(),"Cadastrar-se") 
+        <h1>Pixel Perfect <br> Recursos &amp; Mockups</h1>
+      </div>
+    </div>
+    
+    <div class="nav">
+        <div class="wrapper">
+          <a onclick="myDropdown()" class="dropbtn">Categorias</a>
+          <div id="dropdown" class="dropdn-content">
+          @for(categoria <- categorias){
+            @link("#", categoria.getNome())
+		  }
+          </div>
+          @busca("Busca","search", "iPhone Template")
+        </div>
+     </div>
+     
+   	 <div class="wrapper clearfix">
+   	 	
+   	 	@label(produto.getNome())
+   	 	<p></p>
+   	 	<img src="@produto.getFoto()" />
+   	 	<a href="#" class="button_comprar"> Comprar</a>
+   	 
+   	 </div>
+   	 <div class="wrapper clearfix">
+   	 	<p></p>
+        <h2>R$ @produto.getPreco()</h2>
+   	 	<div class="descricao">
+   	 		<p>@produto.getDescricao()</p>
+   	 	</div>
+   	 </div>
+   	 @separator(" ")
+   	 <div class="wrapper clearfix">
+        <p class="mais_produtos">Mais Produtos</p>
+        <p></p>
+	   	 <ul class="resources clearfix">
+		   	 @for(produto <- produtos){
+		     	@if(produto.getDisponivel()==true){
+		     		@listacustom(routes.Produtos.verCompraProduto(produto.getId()),produto.getNome(),produto.getFoto())
+		     	}
+		     }
+	     </ul>
+     </div>
+
+}

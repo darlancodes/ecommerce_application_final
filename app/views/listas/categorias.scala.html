@@ -1,0 +1,51 @@
+@(categorias: List[Categoria])
+@import meuhelper._
+@main("Categorias") {
+		
+	<div class="banner">
+      <div class="wrapper clearfix">
+        @link("#","Log in") 
+        <a>&nbsp;</a>
+        @linkcall(routes.Clientes.novo(),"Cadastrar-se") 
+        <h1>Pixel Perfect <br> Loja Gerenciamento</h1>
+      </div>
+    </div>
+    		
+		
+	<div class= "wrapper">
+		<h2>Lista de Categorias Cadastradas</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nome</th>
+					<th>Excluir</th>
+					<th>Editar</th>
+				</tr>
+			</thead>
+			<tbody>
+			@if(categorias.isEmpty){
+		
+			<td><h4>Não ha Categorias cadastradas.</h4></td>
+	
+			}else{
+				@for(categoria <- categorias) {
+					<tr>
+						<td>@categoria.getId()</td>
+						<td>@categoria.getNome()</td>
+						
+		
+						<td><a class="btn_lista" href="@routes.Categorias.remover(categoria.getId())">Excluir Registro</a></td>
+						<td><a class="btn_lista" href="@routes.Categorias.editar(categoria.getId())">Editar Registro</a></td>
+					</tr>
+				}
+			}
+			</tbody>
+		</table>
+		
+	<br>
+	
+</div>	
+
+
+}

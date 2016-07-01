@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.List;
 
 import models.*;
@@ -112,6 +113,25 @@ public class Produtos extends Controller{
 	{
 		List<Produto> produtos = Produto.find.all();
 		return ok(views.html.listas.produtos.render(produtos));
+	}
+	
+	public Result verCompraProduto(Long id){
+		
+		List<Categoria> categorias = Categoria.find.all();
+		List<Produto> produtos = Produto.find.all();
+		List<Produto> produtosEnviar = new ArrayList<>();
+		
+		if(produtos.size()>4){
+			for(int i=produtos.size();i<produtos.size()-4;i--){
+				produtosEnviar.add(produtos.get(i));
+			}
+		}else{
+			produtosEnviar = produtos;
+		}
+		
+		Produto produto = Produto.find.byId(id);
+		
+		return ok(views.html.exibeproduto.render(produto,produtosEnviar,categorias));
 	}
 
 }

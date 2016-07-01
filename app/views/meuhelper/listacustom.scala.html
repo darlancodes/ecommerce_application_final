@@ -1,9 +1,8 @@
-@(link: play.api.mvc.Call, nome: String, imagem: String, valor: Double)
+@(link: play.api.mvc.Call, nome: String, imagem: String)
 <li>
   <img src="@imagem">
   <div class="resource_info">
     <h2>@nome</h2>
     <a href="@link" class="button">Ver Produto</a>
-    <p class="price">R$ @valor</p>
   </div>
 </li>

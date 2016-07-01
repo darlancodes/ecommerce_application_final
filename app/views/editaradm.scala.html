@@ -21,12 +21,13 @@
 		@meuhelper.form("cadastro",routes.Administradores.atualizar(), "POST"){
 			
 			@label("Dados Pessoais")
+			@inputText(formAdm("id").value, "Id", "id", "required")
 			@inputText(formAdm("nome").value, "Nome Completo", "nome", "required")
 			@inputText(formAdm("email").value, "E-mail", "email", "required")
 			@inputText(formAdm("matricula").value, "Matrícula", "matricula", "required")
 			@inputText(formAdm("login").value, "Login", "login", "required")
-			@inputPassword(formAdm("password").value, "Senha", "password"," ")
-			@inputPassword(formAdm("password").value, "Confirmar Senha", "password2", "checkPass(); return false;")
+			@inputPassword(formAdm("password").value, "Senha", "senha"," ","password")
+			@inputPassword(formAdm("password").value, "Confirmar Senha", "senha", "checkPass(); return false;","password2")
 			@label("Endereço")
 			@inputText(formEndereco("Rua").value,"Rua","rua", "required")
 			@inputText(formEndereco("Cidade").value,"Cidade","cidade", "required")
@@ -34,7 +35,7 @@
 			@inputText(formEndereco("CEP").value,"CEP","CEP", "required")
 			
 			<p></p>
-			<input class="button" type="submit" value="Cadastrar">
+			<input class="button" type="submit" value="Editar">
 		
 		}
 	

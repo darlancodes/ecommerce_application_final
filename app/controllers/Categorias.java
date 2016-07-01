@@ -35,7 +35,7 @@ public class Categorias extends Controller{
 		
 		Form<Categoria> formCategoriaFill = formCategoria.fill(categoria);
 		
-		return ok(views.html.editarcategoria.render(formCategoria));
+		return ok(views.html.editarcategoria.render(formCategoriaFill));
 	}
 	
 	public Result atualizar(){
@@ -61,6 +61,13 @@ public class Categorias extends Controller{
 		return ok(views.html.cadastrocategoria.render(formCategoria));
 		
 	}
+	
+	public Result listaCategorias()
+	{
+		List<Categoria> categorias = Categoria.find.all();
+		return ok(views.html.listas.categorias.render(categorias));
+	}
+	
 	
 	
 

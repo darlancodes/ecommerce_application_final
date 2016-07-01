@@ -21,10 +21,11 @@
      	@meuhelper.form("cadastro",routes.Categorias.atualizar(), "POST"){
      
      		@label("Dados da Categoria")
+     		@inputText(formCategoria("id").value, "Id", "id", "required")
      		@inputText(formCategoria("nome").value, "Nome Categoria", "nome", "required")
 
     		@separator("")
-     		<input class="button" type="submit" value="Cadastrar">
+     		<input class="button" type="submit" value="Editar">
      	}
      	
      </div>
