@@ -7,6 +7,8 @@ GET     /                           		controllers.Application.index()
 
 # App
 
+POST    /app/logar							controllers.Application.login()
+
 #Clientes
 GET     /clientes				    		controllers.Clientes.novo()
 POST    /clientes/cadastrar       			controllers.Clientes.cadastrar()
@@ -14,6 +16,7 @@ GET     /clientes/editar					controllers.Clientes.editar(id:Long)
 POST    /clientes/atualizar					controllers.Clientes.atualizar()
 GET     /clientes/remover                   controllers.Clientes.remover(id:Long)
 GET     /clientes/login						controllers.Clientes.login()
+
 
 #GET     /clientes/visualizar_dados          controllers.Clientes.visualizarDados()
 #GET     /clientes/comprar                   controllers.Clientes.comprar(id:Long)

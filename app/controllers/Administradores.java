@@ -14,6 +14,7 @@ public class Administradores extends Controller{
 	private final Form<Administrador> formAdm = Form.form(Administrador.class);
 	private final Form<Endereco> formEndereco = Form.form(Endereco.class);
 	private final Form<Cliente> formCliente = Form.form(Cliente.class);
+	private final Form<Login> formLogin = Form.form(Login.class);
 	
 	public Result novo(){
 		
@@ -127,7 +128,7 @@ public class Administradores extends Controller{
 	
 	public Result login(){
 		
-		return ok(views.html.loginadm.render(formAdm));
+		return ok(views.html.loginadm.render(formLogin));
 	}
 	
 	

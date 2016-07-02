@@ -1,4 +1,4 @@
-@(formAdm: Form[Administrador])
+@(formLogin: Form[Login])
 @import meuhelper._
 @main("Login Adm") {
 
@@ -20,9 +20,9 @@
      	@meuhelper.form("Login",routes.Administradores.login(), "POST"){
      		
      		@label("Login:")
-     		@inputText(formAdm("login").value, "Login", "login", " ")
+     		@inputText(formLogin("login").value, "Login", "login", " ")
      		@label("Senha:")
-     		@inputText(formAdm("password").value, "Senha", "password", " ")
+     		@inputText(formLogin("password").value, "Senha", "password", " ")
      		<p></p>
      		<input class="button" type="submit" value="Acessar">
      	

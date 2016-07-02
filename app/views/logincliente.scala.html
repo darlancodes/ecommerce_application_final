@@ -1,4 +1,4 @@
-@(formCliente: Form[Cliente])
+@(formLogin: Form[Login])
 @import meuhelper._
 @main("Login Cliente") {
 
@@ -17,12 +17,12 @@
      </div>
      
      <div class="wrapper_cadastro">
-     	@meuhelper.form("Login",routes.Clientes.login(), "POST"){
+     	@meuhelper.form("Login",routes.Application.login(), "POST"){
      		
      		@label("Login:")
-     		@inputText(formCliente("login").value, "Login", "login", " ")
+     		@inputText(formLogin("login").value, "Login", "login", " ")
      		@label("Senha:")
-     		@inputText(formCliente("password").value, "Senha", "password", " ")
+     		@inputPassword(formLogin("password").value, "Senha", "password", " ", "password"," ")
      		<p></p>
      		<input class="button" type="submit" value="Acessar">
      	

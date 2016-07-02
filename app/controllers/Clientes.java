@@ -10,6 +10,7 @@ public class Clientes extends Controller{
 
 	private final Form<Cliente> formCliente = Form.form(Cliente.class);
 	private final Form<Endereco> formEndereco = Form.form(Endereco.class);
+	private final Form<Login> formLogin = Form.form(Login.class);
 	
 	public Result novo(){
 		
@@ -93,7 +94,7 @@ public class Clientes extends Controller{
 	
 	public Result login(){
 		
-		return ok(views.html.logincliente.render(formCliente));
+		return ok(views.html.logincliente.render(formLogin));
 	}
 	
 }
