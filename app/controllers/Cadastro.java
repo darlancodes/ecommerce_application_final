@@ -69,7 +69,7 @@ public class Cadastro extends Controller{
 		produto.save();
 		
 		List<Produto> produtos = Produto.find.all();
-		return ok(views.html.index.render(produtos,categorias));
+		return ok(views.html.index.render(produtos,categorias,"Log in"));
 	}
 	
 	 public String uploadFoto(){

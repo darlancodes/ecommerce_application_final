@@ -40,7 +40,7 @@ public class Clientes extends Controller{
 		cliente.save();
 		
 		
-		return ok(views.html.cadastrocliente.render(formCliente,formEndereco));
+		return ok(views.html.logincliente.render(formLogin));
 		
 	}
 	

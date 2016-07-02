@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import models.*;
 import play.data.Form;
@@ -37,7 +38,7 @@ public class Produtos extends Controller{
 		
 		flash("Ok", "Usuário Adm excluido com sucesso");
 		
-		return ok(views.html.cadastroproduto.render(formProduto,categorias));
+		return ok(views.html.paineladm.render());
 		
 	}
 	
@@ -121,9 +122,16 @@ public class Produtos extends Controller{
 		List<Produto> produtos = Produto.find.all();
 		List<Produto> produtosEnviar = new ArrayList<>();
 		
+		int i = 0;
+		
 		if(produtos.size()>4){
-			for(int i=produtos.size();i<produtos.size()-4;i--){
-				produtosEnviar.add(produtos.get(i));
+			for(Produto produto: produtos){
+				while(i<4){
+					Random ti = new Random();
+					int index = ti.nextInt((produtos.size() - 1) + 1) + 0;
+					produtosEnviar.add(produtos.get(index));
+					i++;
+				}
 			}
 		}else{
 			produtosEnviar = produtos;

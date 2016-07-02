@@ -29,8 +29,9 @@ GET     /adm/editar							controllers.Administradores.editar(id:Long)
 POST    /adm/atualizar                      controllers.Administradores.atualizar()
 GET     /adm/remover						controllers.Administradores.remover(id:Long)
 GET     /adm/lista							controllers.Administradores.listaAdms()
-GET     /adm/painel							controllers.Administradores.painelAdm()
+GET     /adm/painel_adm_loja				controllers.Administradores.painelAdm()
 GET     /adm/login							controllers.Administradores.login()
+POST     /adm/logarse						controllers.Administradores.logarse()
 
 #AdmClientes
 GET     /adm/clientes/lista					controllers.Administradores.listaClientes()

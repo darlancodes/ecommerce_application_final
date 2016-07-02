@@ -1,10 +1,10 @@
-@(produtos: List[Produto], categorias: List[Categoria])
+@(produtos: List[Produto], categorias: List[Categoria], logado: String)
 @import meuhelper._
 @main("Inicio") {
 
     <div class="banner" onclick="location.href='/';">
       <div class="wrapper clearfix">
-        @linkcall(routes.Clientes.login(),"Log in") 
+        @linkcall(routes.Clientes.login(),logado) 
         <a>&nbsp;</a>
         @linkcall(routes.Clientes.novo(),"Cadastrar-se") 
         <h1>Pixel Perfect <br> Recursos &amp; Mockups</h1>
@@ -19,6 +19,7 @@
             @linkcall(routes.Categorias.buscaCategorias(categoria.getId()), categoria.getNome())
 		  }
           </div>
+           @titulo("Loja","search"," ")
         </div>
      </div>
      

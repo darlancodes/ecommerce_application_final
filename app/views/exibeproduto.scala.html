@@ -19,7 +19,7 @@
             @linkcall(routes.Categorias.buscaCategorias(categoria.getId()), categoria.getNome())
 		  }
           </div>
-          @busca("Busca","search", "iPhone Template")
+          @titulo("Loja","search"," ")
         </div>
      </div>
      
@@ -28,7 +28,15 @@
    	 	@label(produto.getNome())
    	 	<p></p>
    	 	<img src="@produto.getFoto()" />
-   	 	<a href="#" class="button_comprar"> Comprar</a>
+   	 	<!-- <a href="#" class="button_comprar"> Comprar</a> -->
+   	 	<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+		<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+		<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+		<input type="hidden" class="button_comprar" name="code" value="2D3A1D740A0A36400428AF8D5278A7F3" />
+		<input type="hidden" class="button_comprar" name="iot" value="button" />
+		<input type="image" class="button_comprar" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+		</form>
+		<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
    	 
    	 </div>
    	 <div class="wrapper clearfix">

@@ -4,7 +4,7 @@
 
 	<div class="banner">
       <div class="wrapper clearfix" onclick="location.href='/';">
-        @linkcall(routes.Clientes.novo(),"Cadastrar-se") no!") 
+        @linkcall(routes.Clientes.novo(),"Cadastrar-se") 
         
         <h1>Pixel Perfect <br> Loja Intranet</h1>
       </div>
@@ -17,12 +17,12 @@
      </div>
      
      <div class="wrapper_cadastro">
-     	@meuhelper.form("Login",routes.Administradores.login(), "POST"){
+     	@meuhelper.form("Login",routes.Administradores.logarse(), "POST"){
      		
      		@label("Login:")
      		@inputText(formLogin("login").value, "Login", "login", " ")
      		@label("Senha:")
-     		@inputText(formLogin("password").value, "Senha", "password", " ")
+     		@inputPassword(formLogin("password").value, "Senha", "password", " ", "password"," ")
      		<p></p>
      		<input class="button" type="submit" value="Acessar">
      	

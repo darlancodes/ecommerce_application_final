@@ -41,7 +41,7 @@ public class Administradores extends Controller{
 		adm.save();
 		
 		
-		return ok(views.html.paineladm.render());
+		return ok(views.html.loginadm.render(formLogin));
 		
 	}
 	
@@ -131,6 +131,37 @@ public class Administradores extends Controller{
 		return ok(views.html.loginadm.render(formLogin));
 	}
 	
+	public Result logarse(){
+		
+   	
+    	Form<Login> formLoginRecebido = formLogin.bindFromRequest();
+    	
+    	Login login = formLoginRecebido.get();
+    	
+    	List<Administrador> adms = Administrador.find.all();
+    	
+    	for(Administrador adm :adms){
+    		
+    		if(adm.getLogin().equals(login.getLogin())){
+    			
+    			if(BCrypt.checkpw(login.getPassword(), adm.getPassword()) == true){
+    				
+    				session("conectado",adm.getNome());
+    				String user =  session("conectado");
+    			    if(user != null) {
+    			    	return ok(views.html.paineladm.render());
+    			    } else {
+    			    	return ok(views.html.loginadm.render(formLogin));
+    			    }
+    				
+    			}else{
+    				return ok(views.html.loginadm.render(formLogin));
+    			}
+    		}
+    	}
+    	
+    	return ok(views.html.loginadm.render(formLogin));
+	}
 	
 	
 	

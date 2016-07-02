@@ -19,40 +19,43 @@ public class Application extends Controller {
     public Result index() {
     	List<Produto> produtos = Produto.find.all();	
     	List<Categoria> categorias = Categoria.find.all();
-        return ok(views.html.index.render(produtos,categorias));
+        return ok(views.html.index.render(produtos,categorias,"Log in"));
     }
     
-    private final Form<Login> formlogin = Form.form(Login.class);
+    private final Form<Login> formLogin = Form.form(Login.class);
     
     public Result login(){
     	
-    	Form<Login> formLoginRecebido = formlogin.bindFromRequest();
+    	List<Produto> produtos = Produto.find.all();	
+    	List<Categoria> categorias = Categoria.find.all();
+    	
+    	Form<Login> formLoginRecebido = formLogin.bindFromRequest();
     	
     	Login login = formLoginRecebido.get();
     	
     	List<Cliente> clientes = Cliente.find.all();
     	
     	for(Cliente cliente:clientes){
-    		//System.out.println(cliente.getEmail() +" "+ login.getLogin());
+    		
     		if(cliente.getEmail().equals(login.getLogin())){
     			
     			if(BCrypt.checkpw(login.getPassword(), cliente.getPassword()) == true){
     				
-    				session("conectado",cliente.getEmail());
-    				String user = session("conectado");
+    				session("conectado",cliente.getNome());
+    				String user =  session("conectado");
     			    if(user != null) {
-    			        return ok("Hello " + cliente.getNome());
+    			    	return ok(views.html.index.render(produtos,categorias,cliente.getNome()));
     			    } else {
-    			        return unauthorized("Oops, you are not connected");
+    			    	return ok(views.html.index.render(produtos,categorias,"Log in"));
     			    }
     				
     			}else{
-    				return unauthorized("Oops, you are not connected");
+    				return ok(views.html.index.render(produtos,categorias,"Log in"));
     			}
     		}
     	}
     	
-    	return unauthorized("Oops, you are not connected");
+    	return ok(views.html.index.render(produtos,categorias,"Log in"));
     }
 }
 

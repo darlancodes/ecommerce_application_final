@@ -26,7 +26,7 @@ public class Categorias extends Controller{
 		
 		flash("Ok", "Categoria Cadastrada com sucesso!");
 		
-		return ok(views.html.cadastrocategoria.render(formCategoria));
+		return ok(views.html.paineladm.render());
 		
 	}
 	
@@ -82,11 +82,19 @@ public class Categorias extends Controller{
 			}
 			
 		}
+		String login = "Log in";
 		
-		return ok(views.html.index.render(produtosEnviar,categorias));
+		String user = session("connectado");
+	    
+//		if(user != null) {
+//	    	return ok(views.html.index.render(produtosEnviar,categorias,user));
+//	    } else {
+//	    	return ok(views.html.index.render(produtosEnviar,categorias,login));
+//	    }
+		
+	    return ok(views.html.index.render(produtosEnviar,categorias,login));
 		
 	}
-	
 	
 
 }
