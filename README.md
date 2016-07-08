@@ -17,4 +17,4 @@
 - Controlar a autenticação e a sessão do usuário;
 - Utilizar templates parciais nas Views;
 - Considerar aspectos de segurança da informação para aplicações web;
-- Utilizar *AJAX* com *JSON*;
+- Utilizar *AJAX* com *JSON*; -> (Not implemented)
